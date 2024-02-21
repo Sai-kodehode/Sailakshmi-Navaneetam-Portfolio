@@ -1,0 +1,257 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+header {
+  position: fixed;
+  top: 50%;
+  right: 0;
+  transform: translateY(-50%); /* Center vertically */
+  z-index: 1000;
+}
+
+nav {
+  background-color: #2c3140;
+  border-left: 2px solid #ecdcdc;
+}
+
+nav ul {
+  list-style-type: none;
+  text-align: center;
+}
+
+nav li {
+  padding: 20px 0;
+  margin: 15px;
+}
+
+nav a {
+  /* background-color: #244eca; */
+  background: linear-gradient(
+    to bottom,
+    #55ccff 0%,
+    #55ccff 45%,
+    #d3c11a 70%,
+    #d3c11a 100%
+  );
+  text-decoration: none;
+  background-clip: text;
+  color: transparent;
+  /* Make the text color transparent to reveal the gradient background */
+  font-size: 30px;
+  margin: 10px;
+  padding: 20px 0px;
+  cursor: pointer;
+  font-family: "PT Serif", serif;
+}
+
+nav li:hover,
+nav li a:hover {
+  background-color: #212329;
+  color: #55ccff;
+  border-bottom: 4px solid #d3c11a;
+}
+
+#title {
+  display: flex;
+  flex-direction: column;
+}
+
+#name {
+  background: linear-gradient(
+    rgba(85, 204, 255, 1) 40%,
+    rgba(236, 220, 220, 1) 60%
+  );
+  background-clip: text;
+  /* For Webkit/Blink browsers like Chrome and Safari */
+  color: transparent;
+  /* Make the text color transparent to reveal the gradient background */
+  font-size: 40px;
+  margin: 0;
+  padding: 40px;
+  font-family: "PT Serif", serif;
+  text-align: start;
+}
+
+#designation {
+  color: #55ccff;
+  font-family: "PT Serif", serif;
+  font-size: 40px;
+  text-align: end;
+}
+
+main #home {
+  background-image: url("images/Landing\ page\ -\ background\ image.png");
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  color: white;
+}
+
+section {
+  height: 100vh;
+}
+
+#aboutme {
+  padding: 20px;
+  text-align: center;
+}
+#aboutme-div {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  padding: 20px;
+}
+#aboutme div img {
+  width: 260px;
+  height: 260px;
+  border-radius: 50%;
+}
+
+#pitch {
+  width: 400px;
+}
+#skills {
+  width: 220px;
+}
+#cv-div {
+  width: 500px;
+  height: 500px;
+}
+
+.input-hint {
+  position: absolute;
+  top: 0;
+  left: 0;
+  color: #999;
+  pointer-events: none;
+  transition: transform 0.2s ease-out, opacity 0.2s ease-out;
+}
+
+.input-filled + .input-hint {
+  transform: translateY(-100%);
+  opacity: 0;
+}
+
+#cv {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+  padding: 20px;
+}
+
+#cv {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+  padding: 20px;
+  text-align: center;
+}
+
+#cv h1 {
+  grid-column: span 2;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+#cv-content {
+  grid-column: span 2;
+  display: none; /* Initially hide the full CV content */
+}
+
+#cv-screenshot {
+  position: relative;
+  display: inline-block;
+}
+
+#cv-screenshot {
+  position: relative;
+  display: inline-block;
+}
+
+#preview-btn,
+#download-btn {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  z-index: 1; /* Ensure buttons are above the image */
+  background-color: #fff;
+  padding: 5px 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  cursor: pointer;
+  color: #333; /* Set text color for better visibility */
+}
+#cv-screenshot {
+  position: relative;
+  display: inline-block;
+}
+
+#preview-btn,
+#download-btn {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  z-index: 2;
+}
+
+#download-btn {
+  top: 10px;
+  left: 80px;
+}
+
+#cv-screenshot img {
+  width: 100%; /* Make the image fill its container */
+  max-width: 500px; /* Set a maximum width if necessary */
+  height: auto; /* Maintain aspect ratio */
+}
+
+.section-class:nth-child(odd) {
+  background-color: #3e4558;
+}
+
+.section-class:nth-child(even) {
+  background-color: #2c3140;
+}
+
+footer {
+  background-color: #1e242c;
+  color: white;
+  padding: 10px 0;
+  text-align: center;
+}
+
+.fa-linkedin-square,
+.fa-facebook-square,
+.fa-github-square {
+  color: #55ccff;
+  /* background-color: white;  */
+  font-size: 48px;
+  /* padding: 3px 3px;  */
+  /* Adjust padding for better visual appearance */
+  /* border-radius: 3px; */
+  /* margin: 5px */
+  /* Add margin for spacing between icons */
+  text-decoration: none; /* Remove underline for anchor elements */
+  /* font-size: 180px; */
+}
+
+.fa-linkedin-square:hover,
+.fa-facebook-square:hover,
+.fa-github-square:hover {
+  background-color: #005c99; /* Change background color on hover */
+}
+
+foooter a {
+  background-color: #55ccff;
+  color: red;
+}

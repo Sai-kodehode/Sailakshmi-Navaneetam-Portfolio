@@ -1,0 +1,89 @@
+<section id="aboutme" class="section-class">
+  <h1>About Me</h1>
+  <div id="aboutme-div">
+    <div>
+      <img src="images/Sai-profile pic.jpg" alt="" />
+    </div>
+    <div id="pitch">
+      <p>
+        Hey! I'm Sailkashmi, and I have a passion for acquiring new knowledge.
+        Over the last six months, I dedicated my time to studying programming
+        through Kodehode, a course that predominantly focuses on front-end
+        development. Throughout this journey, I've honed my abilities in HTML,
+        CSS, JavaScript, React, and Figma. Presently, I'm on the lookout for an
+        internship where I can apply the skills I've acquired. In my previous
+        role, I specialized in creating automation’s using VBA (Macros).I excel
+        when working with a team and find joy in collaboratively generating
+        ideas to produce exceptional products. I'm eagerly anticipating my
+        future as a front-end developer, excited about the prospect of
+        continuously enhancing my skills and contributing to the creation of
+        impressive projects!
+      </p>
+    </div>
+    <div id="skills">
+      <h2>Skills</h2>
+      <p>
+        HTML, CSS, JavaScript, Git, GitHub, C#.Net, ASP.NET, C, SQL, node.js,
+        VBA(Macros), PowerBi, React, AdvancedExcel
+      </p>
+    </div>
+  </div>
+</section>
+
+<section id="cv" class="section-class">
+  <h1>CV</h1>
+  Clickable CV screenshot with Preview and Download options
+  <div id="cv-screenshot" onclick="previewCV()">
+    <button id="preview-btn">Preview</button>
+    <a
+      href="images/Sailakshmi Navaneetam-Resume.pdf"
+      download="Sailakshmi-Resume.pdf"
+    >
+      <button id="download-btn">Download</button>
+    </a>
+    <img src="images/Sai-cvScreenshot.png" alt="CV Screenshot" />
+  </div>
+
+  <div id="cv-content" style="display: none">
+    <!-- Add your full CV content here -->
+    <embed
+      src="images/Sailakshmi Navaneetam-Resume.pdf"
+      type="application/pdf"
+      width="100%"
+      height="600px"
+    />
+    <button id="closeCVBtn" onclick="toggleCVContent()">X</button>
+  </div>
+</section>
+
+<section id="myprojects" class="section-class">My Projects</section>
+<section id="contact" class="section-class">
+  <h1>Contact</h1>
+  <form id="contact-form">
+    <input type="text" id="name" name="name" placeholder="Name" required />
+    <textarea
+      id="message"
+      name="message"
+      rows="4"
+      placeholder="Message"
+      required
+    ></textarea>
+    <input
+      type="tel"
+      id="contact-number"
+      name="contact-number"
+      placeholder="Contact Number"
+      required
+    />
+    <input type="email" id="email" name="email" placeholder="Email" required />
+
+    <button type="submit">Send</button>
+  </form>
+</section>
+
+<footer>
+  Connect me via
+  <a href=""><i class="fa fa-linkedin-square"></i></a>
+  <a href=""><i class="fa fa-github-square"></i></a>
+  <a href="#" class="fa fa-facebook-square"></a>
+</footer>
