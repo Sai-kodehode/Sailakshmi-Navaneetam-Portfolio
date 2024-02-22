@@ -8,6 +8,7 @@ body {
   margin: 0;
   padding: 0;
 }
+/* Landing Page */
 
 header {
   position: fixed;
@@ -30,6 +31,7 @@ nav ul {
 nav li {
   padding: 20px 0;
   margin: 15px;
+  cursor: pointer;
 }
 
 nav a {
@@ -45,7 +47,7 @@ nav a {
   background-clip: text;
   color: transparent;
   /* Make the text color transparent to reveal the gradient background */
-  font-size: 30px;
+  font-size: 25px;
   margin: 10px;
   padding: 20px 0px;
   cursor: pointer;
@@ -98,121 +100,144 @@ main #home {
   color: white;
 }
 
+/* About Me */
+
+.about-heading {
+  color: #ecdcdc;
+  text-decoration: underline;
+  font-family: "Song Myung", serif;
+  font-style: normal;
+  font-size: 40px;
+  font-weight: 300;
+}
+
+.me-heading {
+  color: #55ccff;
+  text-decoration: underline;
+  /* font-family: "Song Myung", serif;
+  font-style: normal; */
+  /* font-weight: 100px; */
+}
+
+.main-color {
+  color: #55ccff;
+}
+
+.highlight-color {
+  color: #ecdcdc;
+}
+
+#aboutme {
+  padding: 30px 0;
+  text-align: center;
+}
+
 section {
   height: 100vh;
 }
 
-#aboutme {
-  padding: 20px;
-  text-align: center;
-}
 #aboutme-div {
   display: grid;
-  grid-template-columns: 1fr 2fr;
-  padding: 20px;
+  grid-template-columns: 1fr 5fr;
+  grid-template-rows: 0.7fr 0.1fr 0.1fr;
+  grid-template-areas:
+    "pic pitch"
+    "sks pitch"
+    "set cv";
+  align-items: center;
+  row-gap: 10px;
+  column-gap: 40px;
+  width: 80%;
+  height: 90%;
+  /* margin: 0 auto;  */
+  padding: 20px 20px 0px 80px;
 }
-#aboutme div img {
+
+.image {
+  grid-area: pic;
   width: 260px;
   height: 260px;
-  border-radius: 50%;
+  border-radius: 200px;
+  border: 8px solid #ecdcdc;
+  object-fit: cover;
 }
 
 #pitch {
-  width: 400px;
+  grid-area: pitch;
+  width: 100%;
+  font-size: 18px;
+  font-family: "Tiro Telugu", serif;
+  font-weight: 300;
+  font-style: normal;
+  text-align: start;
+  letter-spacing: 0.5px;
+  height: 100%;
+  padding: 20px 0 10px 20px;
+  /* margin-bottom: 100px; */
 }
-#skills {
-  width: 220px;
+
+#pitch p {
+  line-height: 2;
+  margin-bottom: 20px;
+  text-indent: 60px;
 }
+
+.skills-heading {
+  grid-area: sks;
+  color: #55ccff;
+  align-items: center;
+  text-align: center;
+  background-color: #2c3140;
+  width: max-content;
+  padding: 6px 10px;
+  text-decoration: underline;
+  border-radius: 10px;
+  margin-left: 90px;
+  margin-bottom: -20px;
+  margin-top: 20px;
+}
+
+#skill-set {
+  grid-area: set;
+  width: 280px;
+  height: 150px;
+  text-align: center;
+  padding: 10px 0;
+  background-color: #2c3140;
+  font-size: 18px;
+  font-family: "Tiro Telugu", serif;
+  font-weight: 200;
+  font-style: normal;
+  border-radius: 20px;
+}
+
+#resume {
+  grid-area: cv;
+  background-color: #2c3140;
+  color: #55ccff;
+  border: none;
+  padding: 15px 25px;
+  font-size: 20px;
+  cursor: pointer;
+  width: max-content;
+  display: inline-block;
+  text-decoration: none;
+  margin: 0 auto;
+  justify-self: end;
+  position: relative;
+  border-left: 4px solid #ecdcdc;
+  border-bottom: 4px solid #ecdcdc;
+  border-radius: 20px;
+  margin-top: 160px;
+}
+
+#resume:focus {
+  outline: none;
+}
+
 #cv-div {
   width: 500px;
   height: 500px;
-}
-
-.input-hint {
-  position: absolute;
-  top: 0;
-  left: 0;
-  color: #999;
-  pointer-events: none;
-  transition: transform 0.2s ease-out, opacity 0.2s ease-out;
-}
-
-.input-filled + .input-hint {
-  transform: translateY(-100%);
-  opacity: 0;
-}
-
-#cv {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 20px;
-  padding: 20px;
-}
-
-#cv {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 20px;
-  padding: 20px;
-  text-align: center;
-}
-
-#cv h1 {
-  grid-column: span 2;
-  text-align: center;
-  margin-bottom: 20px;
-}
-
-#cv-content {
-  grid-column: span 2;
-  display: none; /* Initially hide the full CV content */
-}
-
-#cv-screenshot {
-  position: relative;
-  display: inline-block;
-}
-
-#cv-screenshot {
-  position: relative;
-  display: inline-block;
-}
-
-#preview-btn,
-#download-btn {
-  position: absolute;
-  top: 10px;
-  left: 10px;
-  z-index: 1; /* Ensure buttons are above the image */
-  background-color: #fff;
-  padding: 5px 10px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  cursor: pointer;
-  color: #333; /* Set text color for better visibility */
-}
-#cv-screenshot {
-  position: relative;
-  display: inline-block;
-}
-
-#preview-btn,
-#download-btn {
-  position: absolute;
-  top: 10px;
-  left: 10px;
-  z-index: 2;
-}
-
-#download-btn {
-  top: 10px;
-  left: 80px;
-}
-
-#cv-screenshot img {
-  width: 100%; /* Make the image fill its container */
-  max-width: 500px; /* Set a maximum width if necessary */
-  height: auto; /* Maintain aspect ratio */
 }
 
 .section-class:nth-child(odd) {
