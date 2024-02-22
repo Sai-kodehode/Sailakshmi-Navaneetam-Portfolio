@@ -47,7 +47,7 @@ nav a {
   background-clip: text;
   color: transparent;
   /* Make the text color transparent to reveal the gradient background */
-  font-size: 25px;
+  font-size: 22px;
   margin: 10px;
   padding: 20px 0px;
   cursor: pointer;
@@ -219,6 +219,7 @@ section {
   padding: 15px 25px;
   font-size: 20px;
   cursor: pointer;
+
   /* width: max-content; */
   /* display: inline-block; */
   /* text-decoration: none; */
@@ -254,11 +255,86 @@ section {
   cursor: pointer;
   font-family: "PT Serif", serif;
 }
-#cv-div {
-  width: 500px;
-  height: 500px;
+/* Style for the name input with the class */
+#myprojects {
+  height: 100vh;
+  padding: 30px 0;
+  text-align: center;
+  color: #ecdcdc;
+  font-size: 22px;
 }
 
+#projects-list img {
+  background-color: #ecdcdc;
+  width: 250px;
+  height: 250px;
+}
+#projects-list {
+  width: 90%;
+  height: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  padding: 30px 50px;
+  gap: 5px;
+  flex-grow: 1;
+
+  max-width: 1440px;
+}
+
+#projects-list div {
+  flex: 1 200px;
+}
+
+#contact {
+  height: 80vh;
+  padding: 30px 0;
+  text-align: center;
+}
+#contact-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  padding: 20px 0;
+  max-width: 600px; /* Set a maximum width for the form */
+  margin: 0 auto;
+  /* Center the form horizontally */
+}
+#name-input,
+input,
+textarea {
+  background-color: #1e242c;
+  color: white;
+  border: 1px solid #55ccff; /* You can adjust border color as needed */
+  padding: 8px;
+  margin: 10px 0;
+  display: block;
+  width: 500px;
+  border-radius: 10px;
+  /* text-decoration: none; */
+  border-color: #2d2727;
+  font-size: 18px;
+  font-family: "Tiro Telugu", serif;
+  font-weight: 300;
+}
+
+textarea {
+  resize: none;
+}
+/* Style for the name input with the class */
+#submit-btn {
+  padding: 8px 25px;
+  background-color: #1e242c;
+  border: 1px solid #ecdcdc; /* Set border color */
+  text-align: center;
+  color: #55ccff;
+  border-radius: 10px;
+  cursor: pointer;
+  outline: none;
+  font-family: "PT Serif", serif;
+  font-size: large;
+  font-size: 22px;
+}
 .section-class:nth-child(odd) {
   background-color: #3e4558;
 }
@@ -270,8 +346,12 @@ section {
 footer {
   background-color: #1e242c;
   color: white;
-  padding: 10px 0;
+  padding: 90px 0;
   text-align: center;
+  /* align-items: center; */
+  /* justify-content: center; */
+  height: 20vh;
+  font-size: 30px;
 }
 
 .fa-linkedin-square,
@@ -279,20 +359,22 @@ footer {
 .fa-github-square {
   color: #55ccff;
   /* background-color: white;  */
-  font-size: 48px;
+  font-size: 60px;
   /* padding: 3px 3px;  */
   /* Adjust padding for better visual appearance */
   /* border-radius: 3px; */
   /* margin: 5px */
   /* Add margin for spacing between icons */
   text-decoration: none; /* Remove underline for anchor elements */
+  text-indent: 20px;
   /* font-size: 180px; */
 }
 
 .fa-linkedin-square:hover,
 .fa-facebook-square:hover,
 .fa-github-square:hover {
-  background-color: #005c99; /* Change background color on hover */
+  color: #ecdcdc;
+  /* Change background color on hover */
 }
 
 foooter a {
