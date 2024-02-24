@@ -2,6 +2,8 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  user-select: none;
+  scroll-behavior: smooth;
 }
 
 body {
@@ -21,21 +23,23 @@ header {
 nav {
   background-color: #2c3140;
   border-left: 2px solid #ecdcdc;
+  margin-left: 20px;
 }
 
 nav ul {
   list-style-type: none;
   text-align: center;
+  /* padding: 1px 0; */
 }
 
 nav li {
-  padding: 20px 0;
-  margin: 15px;
+  padding: 10px 0;
+  margin: 25px 10px;
   cursor: pointer;
+  text-decoration: none;
 }
 
 nav a {
-  /* background-color: #244eca; */
   background: linear-gradient(
     to bottom,
     #55ccff 0%,
@@ -46,10 +50,9 @@ nav a {
   text-decoration: none;
   background-clip: text;
   color: transparent;
-  /* Make the text color transparent to reveal the gradient background */
-  font-size: 22px;
+  font-size: 20px;
   margin: 10px;
-  padding: 20px 0px;
+  padding: 10px 0px;
   cursor: pointer;
   font-family: "PT Serif", serif;
 }
@@ -64,6 +67,8 @@ nav li a:hover {
 #title {
   display: flex;
   flex-direction: column;
+  font-weight: bolder;
+  /* background-color: #8f8638; */
 }
 
 #name {
@@ -72,9 +77,7 @@ nav li a:hover {
     rgba(236, 220, 220, 1) 60%
   );
   background-clip: text;
-  /* For Webkit/Blink browsers like Chrome and Safari */
   color: transparent;
-  /* Make the text color transparent to reveal the gradient background */
   font-size: 40px;
   margin: 0;
   padding: 40px;
@@ -114,9 +117,6 @@ main #home {
 .me-heading {
   color: #55ccff;
   text-decoration: underline;
-  /* font-family: "Song Myung", serif;
-  font-style: normal; */
-  /* font-weight: 100px; */
 }
 
 .main-color {
@@ -138,7 +138,7 @@ section {
 
 #aboutme-div {
   display: grid;
-  grid-template-columns: 1fr 5fr;
+  grid-template-columns: 1fr 3fr;
   grid-template-rows: 0.7fr 0.1fr 0.1fr;
   grid-template-areas:
     "pic pitch"
@@ -149,7 +149,6 @@ section {
   column-gap: 40px;
   width: 80%;
   height: 90%;
-  /* margin: 0 auto;  */
   padding: 20px 20px 0px 80px;
 }
 
@@ -173,7 +172,13 @@ section {
   letter-spacing: 0.5px;
   height: 100%;
   padding: 20px 0 10px 20px;
-  /* margin-bottom: 100px; */
+  max-width: 800px;
+}
+
+@media only screen and (max-width: 768px) {
+  #pitch {
+    max-width: 100%; /* Adjust for smaller screens */
+  }
 }
 
 #pitch p {
@@ -216,16 +221,10 @@ section {
   background-color: #2c3140;
   /* color: #55ccff; */
   border: none;
-  padding: 15px 25px;
+  padding: 8px 12px;
   font-size: 20px;
   cursor: pointer;
-
-  /* width: max-content; */
-  /* display: inline-block; */
-  /* text-decoration: none; */
-  /* margin: 0 auto; */
   justify-self: end;
-  /* position: relative; */
   border-left: 4px solid #ecdcdc;
   border-bottom: 4px solid #ecdcdc;
   border-radius: 20px;
@@ -236,8 +235,19 @@ section {
   outline: none;
 }
 
+.fa-download {
+  /* background-color: #2c3140; */
+  padding-left: 5px;
+}
+#resume a span {
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  display: inline-block;
+  margin-left: 10px;
+}
 #resume a {
-  /* text-decoration: none; */
   background: linear-gradient(
     to bottom,
     #55ccff 0%,
@@ -245,46 +255,128 @@ section {
     #d3c11a 70%,
     #d3c11a 100%
   );
-  /* text-decoration: none; */
+
   background-clip: text;
   color: transparent;
-  /* Make the text color transparent to reveal the gradient background */
   font-size: 25px;
   margin: 10px;
   padding: 20px 0px;
   cursor: pointer;
   font-family: "PT Serif", serif;
 }
-/* Style for the name input with the class */
+
 #myprojects {
-  height: 100vh;
-  padding: 30px 0;
-  text-align: center;
+  height: auto;
+  padding-bottom: 50px;
+  /* text-align: center; */
+  /* width: 0 auto; */
   color: #ecdcdc;
   font-size: 22px;
 }
-
-#projects-list img {
-  background-color: #ecdcdc;
-  width: 250px;
-  height: 250px;
+#myprojects h1 {
+  padding: 30px 0;
+  width: fit-content;
+  margin: 0 auto;
 }
-#projects-list {
-  width: 90%;
-  height: 100%;
+
+/*  */
+.project-container {
+  max-width: 80%;
+  line-height: 0;
+  /* margin: 0 auto; */
+  margin-left: 80px;
   display: flex;
   flex-wrap: wrap;
-  padding: 30px 50px;
-  gap: 5px;
-  flex-grow: 1;
-
-  max-width: 1440px;
+  /* height: auto; */
+  column-gap: 1.2em;
+  row-gap: 1.2em;
 }
 
-#projects-list div {
-  flex: 1 200px;
+.project-item {
+  flex: 1 240px;
 }
 
+/* .expand {
+  flex: 2 20px;
+} */
+
+.project-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.project-item .project-name {
+  padding: 10px;
+  margin: 10px 0 10px 0;
+  font-size: 18px;
+  font-weight: 300px;
+  font-family: "Tiro Telugu", serif;
+}
+
+.project-item {
+  position: relative;
+  overflow: hidden;
+}
+
+.project-item {
+  display: inline-block;
+  border-radius: 12px;
+  color: #031b1c;
+
+  /* Optional: Set a background color to match the border color */
+  background: linear-gradient(180deg, #39d2d7 20%, #c1b973 100%);
+}
+
+.project-item img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border: 6px solid transparent; /* Set the initial transparent border */
+  border-radius: 10px; /* Set the border radius for the image */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3); /* Use box-shadow for a blur shadow effect */
+}
+
+.project-item:hover img {
+  transform: scale(1.1);
+}
+
+.description {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  color: #fff;
+  padding: 10px;
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+  height: 100%;
+  overflow: auto;
+  /* white-space: normal; */
+}
+
+.project-item:hover .description {
+  opacity: 1;
+  color: #ecdcdc;
+}
+
+.project-item:hover .description {
+  border: 6px solid transparent; /* Set the initial transparent border */
+  border-image: linear-gradient(180deg, #4aabae 0%, #8f8638 100%) 1; /* Apply linear gradient as border image */
+  border-image-slice: 1; /* Set the thickness of the border */
+  border-radius: 10px;
+  box-shadow: 0 0 1px rgba(0, 0, 0, 0.1); /* Optional: Add a regular box shadow for a smoother look */
+}
+.description p {
+  display: block;
+  margin: 5px 0;
+
+  border-radius: 10px;
+  line-height: 1.5;
+}
+/*  */
 #contact {
   height: 80vh;
   padding: 30px 0;
@@ -344,12 +436,13 @@ textarea {
 }
 
 footer {
+  display: flex;
   background-color: #1e242c;
   color: white;
-  padding: 90px 0;
+  /* padding: 90px 0; */
   text-align: center;
-  /* align-items: center; */
-  /* justify-content: center; */
+  align-items: center;
+  justify-content: center;
   height: 20vh;
   font-size: 30px;
 }
@@ -364,7 +457,7 @@ footer {
   /* Adjust padding for better visual appearance */
   /* border-radius: 3px; */
   /* margin: 5px */
-  /* Add margin for spacing between icons */
+  /* Add margin for spacing betprojectween icons */
   text-decoration: none; /* Remove underline for anchor elements */
   text-indent: 20px;
   /* font-size: 180px; */
@@ -379,5 +472,7 @@ footer {
 
 foooter a {
   background-color: #55ccff;
+  margin-top: 20px;
+  justify-content: center;
   color: red;
 }
