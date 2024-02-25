@@ -1,20 +1,54 @@
-function toggleCVContent() {
-  var cvContent = document.getElementById("cv-content");
-  var cvScreenshot = document.getElementById("cv-screenshot");
+document.addEventListener("DOMContentLoaded", function () {
+  // Function to handle intersection changes
+  function handleIntersection(entries) {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        // Get the id of the intersecting section
+        const currentSectionId = entry.target.id;
 
-  if (cvContent.style.display === "none") {
-    cvContent.style.display = "block";
-    cvScreenshot.style.display = "none";
-  } else {
-    cvContent.style.display = "none";
-    cvScreenshot.style.display = "block";
+        // Remove the active class from all navigation items
+        document.querySelectorAll("nav ul li").forEach(function (navItem) {
+          navItem.classList.remove("active");
+        });
+
+        // Add the active class to the corresponding navigation item
+        const homeNavItem = document.getElementById("homeNavItem");
+        const aboutMeNavItem = document.getElementById("aboutMeNavItem");
+        const projectsNavItem = document.getElementById("projectsNavItem");
+        const contactNavItem = document.getElementById("contactNavItem");
+
+        switch (currentSectionId) {
+          case "home":
+            homeNavItem.classList.add("active");
+            break;
+          case "aboutme":
+            aboutMeNavItem.classList.add("active");
+            break;
+          case "myprojects":
+            projectsNavItem.classList.add("active");
+            break;
+          case "contact":
+            contactNavItem.classList.add("active");
+            break;
+          default:
+            homeNavItem.classList.add("active");
+            break;
+        }
+      }
+    });
   }
-}
 
-function previewCV() {
-  var cvContent = document.getElementById("cv-content");
-  var cvScreenshot = document.getElementById("cv-screenshot");
+  // Create an Intersection Observer
+  const observer = new IntersectionObserver(handleIntersection, {
+    root: null, // Use the viewport as the root
+    threshold: 0.5, // Trigger when 50% of the target is visible
+  });
 
-  cvContent.style.display = "block";
-  cvScreenshot.style.display = "none";
-}
+  // Observe each section with the class "section-class"
+  document.querySelectorAll(".section-class").forEach((section) => {
+    observer.observe(section);
+  });
+
+  // Initial update when the page loads
+  updateActiveNavItem();
+});

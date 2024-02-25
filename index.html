@@ -11,14 +11,10 @@
       href="https://fonts.googleapis.com/css2?family=PT+Serif:ital,wght@0,400;0,700;1,400;1,700&display=swap"
       rel="stylesheet"
     />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       href="https://fonts.googleapis.com/css2?family=Song+Myung&family=Tiro+Telugu:ital@0;1&display=swap"
       rel="stylesheet"
     />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       href="https://fonts.googleapis.com/css2?family=Song+Myung&display=swap"
       rel="stylesheet"
@@ -32,17 +28,24 @@
   <body>
     <!-- Landing Page -->
     <header>
-      <nav>
+      <nav id="navbar">
         <ul>
-          <li class=""><a href="#home" class="">Home</a></li>
-          <li><a href="#aboutme">About Me</a></li>
-          <!-- <li><a href="#cv">CV</a></li> -->
-          <li><a href="#myprojects">My Projects</a></li>
-          <li><a href="#contact">Contact</a></li>
+          <li id="homeNavItem">
+            <a href="#home" class="">Home</a>
+          </li>
+          <li id="aboutMeNavItem">
+            <a href="#aboutme">About Me</a>
+          </li>
+          <li id="projectsNavItem">
+            <a href="#myprojects">My Projects</a>
+          </li>
+          <li id="contactNavItem">
+            <a href="#contact">Contact</a>
+          </li>
         </ul>
       </nav>
     </header>
-    <main>
+    <main id="mainContentContainer">
       <section id="home" class="section-class">
         <div id="title">
           <p id="name">Sailakshmi Navaneetam</p>
@@ -96,6 +99,7 @@
           <span class="highlight-color"> JavaScript</span>,
           <span class="highlight-color"> Git</span>,
           <span class="highlight-color"> GitHub</span>,
+          <span class="highlight-color"> Figma</span>,
           <span class="highlight-color"> C#.Net</span>,
           <span class="highlight-color"> ASP.NET</span>,
           <span class="highlight-color"> C</span>,
@@ -112,11 +116,10 @@
             >CV <i class="fa fa-download"></i
           ></a>
         </button>
-        <!-- <button id="resume">My Resume</button> -->
       </div>
     </section>
 
-    <!-- reference -->
+    <!-- My projects -->
 
     <section id="myprojects" class="section-class">
       <h1 class="about-heading">My <span class="me-heading">Projects</span></h1>
@@ -295,40 +298,64 @@
       </div>
     </section>
     <!-- contact -->
+
     <section id="contact" class="section-class">
       <h1 class="about-heading">Contact</h1>
-      <form id="contact-form">
-        <input
-          class="name-input"
-          type="text"
-          id="name-input"
-          name="name"
-          placeholder="Name"
-        />
+      <div id="contact-details">
+        <p id="contact-message">
+          Open and eager for new opportunities. Excited to embark on the next
+          creative journey. <span>Let's connect!</span>
+        </p>
+        <div class="social-icons">
+          <p>
+            <i class="fa fa-envelope-square"></i>
+            <a
+              href="mailto:sailakshminavaneetam@gmail.com"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              sailakshminavaneetam@gmail.com</a
+            >
+          </p>
+          <p>
+            <i class="fa fa-linkedin-square"></i>
+            <a
+              href="https://linkedin.com/yourprofile"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              LinkedIn</a
+            >
+          </p>
 
-        <textarea
-          id="message"
-          name="message"
-          rows="4"
-          placeholder="Message"
-        ></textarea>
-        <input
-          type="tel"
-          id="contact-number"
-          name="contact-number"
-          placeholder="Contact Number"
-        />
-        <input type="email" id="email" name="email" placeholder="Email" />
+          <p>
+            <i class="fa fa-github-square"></i>
+            <a
+              href="https://github.com/yourusername"
+              target="_blank"
+              rel="noopener noreferrer"
+              >GitHub</a
+            >
+          </p>
 
-        <button id="submit-btn" type="submit">Send</button>
-      </form>
+          <p>
+            <i class="fa fa-facebook-square"></i>
+            <a
+              href="https://facebook.com/yourusername"
+              target="_blank"
+              rel="noopener noreferrer"
+              >Facebook</a
+            >
+          </p>
+        </div>
+      </div>
     </section>
 
     <footer>
-      Connect me via
-      <a href=""><i class="fa fa-linkedin-square"></i></a>
-      <a href=""><i class="fa fa-github-square"></i></a>
-      <a href="#" class="fa fa-facebook-square"></a>
+      <p>
+        <i class="fa fa-star left"></i> Excited to create, inspired to innovate
+        <i class="fa fa-star right"></i>
+      </p>
     </footer>
   </body>
 </html>

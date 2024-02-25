@@ -1,4 +1,6 @@
-* {
+*,
+*::before,
+*::after {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -6,10 +8,25 @@
   scroll-behavior: smooth;
 }
 
+/* variables */
+:root {
+  --color-blue: #55ccff;
+  --color-yellow: #d3c11a;
+  --color-light-orange: #ecdcdc;
+  --color-white: white;
+  --bkclr--black: #2c3140;
+  --bkclr--thick-black: #1e242c;
+
+  --ff-primary: "PT Serif", serif;
+  --ff-secondary: "Song Myung", serif;
+  --ff-tertiary: "Tiro Telugu", serif;
+}
+
 body {
   margin: 0;
   padding: 0;
 }
+
 /* Landing Page */
 
 header {
@@ -21,20 +38,18 @@ header {
 }
 
 nav {
-  background-color: #2c3140;
-  border-left: 2px solid #ecdcdc;
-  margin-left: 20px;
+  background-color: var(--bkclr--black);
+  border-left: 2px solid var(--color-light-orange);
 }
 
 nav ul {
   list-style-type: none;
   text-align: center;
-  /* padding: 1px 0; */
 }
 
 nav li {
-  padding: 10px 0;
-  margin: 25px 10px;
+  padding: 10px 5px;
+  margin: 35px 0px;
   cursor: pointer;
   text-decoration: none;
 }
@@ -42,10 +57,10 @@ nav li {
 nav a {
   background: linear-gradient(
     to bottom,
-    #55ccff 0%,
-    #55ccff 45%,
-    #d3c11a 70%,
-    #d3c11a 100%
+    var(--color-blue) 0%,
+    var(--color-blue) 45%,
+    var(--color-yellow) 70%,
+    var(--color-yellow) 100%
   );
   text-decoration: none;
   background-clip: text;
@@ -54,21 +69,37 @@ nav a {
   margin: 10px;
   padding: 10px 0px;
   cursor: pointer;
-  font-family: "PT Serif", serif;
+  font-family: var(--ff-primary);
 }
 
-nav li:hover,
-nav li a:hover {
+nav li:hover {
   background-color: #212329;
-  color: #55ccff;
-  border-bottom: 4px solid #d3c11a;
+  color: var(--color-blue);
+  border-bottom: 4px solid var(--color-yellow);
+}
+nav li a:hover {
+  color: var(--color-blue);
 }
 
-#title {
+nav li#homeNavItem.active,
+nav li#aboutMeNavItem.active,
+nav li#projectsNavItem.active,
+nav li#contactNavItem.active {
+  background-color: #43495b;
+}
+
+/* main */
+main section {
+  width: 100%;
+  height: 100vh;
+  background-image: url("images/Landing\ page\ -\ background\ image.png");
+  background-size: cover;
+  background-position: center;
   display: flex;
-  flex-direction: column;
-  font-weight: bolder;
-  /* background-color: #8f8638; */
+  justify-content: center;
+  align-items: center;
+  font-family: var(--ff-primary);
+  font-size: 40px;
 }
 
 #name {
@@ -78,67 +109,50 @@ nav li a:hover {
   );
   background-clip: text;
   color: transparent;
-  font-size: 40px;
   margin: 0;
-  padding: 40px;
-  font-family: "PT Serif", serif;
+  padding: 40px 0;
   text-align: start;
 }
 
 #designation {
-  color: #55ccff;
-  font-family: "PT Serif", serif;
-  font-size: 40px;
+  color: var(--color-blue);
   text-align: end;
-}
-
-main #home {
-  background-image: url("images/Landing\ page\ -\ background\ image.png");
-  background-size: cover;
-  background-position: center;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-  color: white;
 }
 
 /* About Me */
 
+#aboutme {
+  width: 100%;
+  height: 100vh;
+  padding: 30px 0 0 0;
+  text-align: center;
+}
+
 .about-heading {
-  color: #ecdcdc;
+  color: var(--color-light-orange);
   text-decoration: underline;
-  font-family: "Song Myung", serif;
+  font-family: var(--ff-secondary);
   font-style: normal;
   font-size: 40px;
   font-weight: 300;
 }
 
 .me-heading {
-  color: #55ccff;
+  color: var(--color-blue);
   text-decoration: underline;
 }
 
 .main-color {
-  color: #55ccff;
+  color: var(--color-blue);
 }
 
 .highlight-color {
-  color: #ecdcdc;
-}
-
-#aboutme {
-  padding: 30px 0;
-  text-align: center;
-}
-
-section {
-  height: 100vh;
+  color: var(--color-light-orange);
 }
 
 #aboutme-div {
   display: grid;
-  grid-template-columns: 1fr 3fr;
+  grid-template-columns: 1fr auto;
   grid-template-rows: 0.7fr 0.1fr 0.1fr;
   grid-template-areas:
     "pic pitch"
@@ -147,39 +161,38 @@ section {
   align-items: center;
   row-gap: 10px;
   column-gap: 40px;
-  width: 80%;
+  width: 85%;
   height: 90%;
-  padding: 20px 20px 0px 80px;
+  padding: 20px 0px 0px 80px;
 }
 
-.image {
+#aboutme-div .image {
   grid-area: pic;
   width: 260px;
   height: 260px;
   border-radius: 200px;
-  border: 8px solid #ecdcdc;
+  border: 8px solid var(--color-light-orange);
   object-fit: cover;
 }
 
 #pitch {
   grid-area: pitch;
-  width: 100%;
+  width: 90%;
   font-size: 18px;
-  font-family: "Tiro Telugu", serif;
-  font-weight: 300;
+  font-family: var(--ff-tertiary);
   font-style: normal;
   text-align: start;
   letter-spacing: 0.5px;
   height: 100%;
   padding: 20px 0 10px 20px;
-  max-width: 800px;
+  /* max-width: 800px; */
 }
 
-@media only screen and (max-width: 768px) {
+/* @media only screen and (max-width: 768px) {
   #pitch {
-    max-width: 100%; /* Adjust for smaller screens */
+    max-
   }
-}
+} */
 
 #pitch p {
   line-height: 2;
@@ -189,28 +202,27 @@ section {
 
 .skills-heading {
   grid-area: sks;
-  color: #55ccff;
-  align-items: center;
+  color: var(--color-blue);
   text-align: center;
-  background-color: #2c3140;
+  background-color: var(--bkclr--black);
   width: max-content;
   padding: 6px 10px;
   text-decoration: underline;
   border-radius: 10px;
   margin-left: 90px;
-  margin-bottom: -20px;
+  margin-bottom: -25px;
   margin-top: 20px;
 }
 
 #skill-set {
   grid-area: set;
-  width: 280px;
-  height: 150px;
+  width: 300px;
+  height: 140px;
   text-align: center;
-  padding: 10px 0;
-  background-color: #2c3140;
+  padding: 5px;
+  background-color: var(--bkclr--black);
   font-size: 18px;
-  font-family: "Tiro Telugu", serif;
+  font-family: var(--ff-tertiary);
   font-weight: 200;
   font-style: normal;
   border-radius: 20px;
@@ -218,15 +230,14 @@ section {
 
 #resume {
   grid-area: cv;
-  background-color: #2c3140;
-  /* color: #55ccff; */
+  background-color: var(--bkclr--black);
   border: none;
   padding: 8px 12px;
   font-size: 20px;
   cursor: pointer;
   justify-self: end;
-  border-left: 4px solid #ecdcdc;
-  border-bottom: 4px solid #ecdcdc;
+  border-left: 4px solid var(--color-light-orange);
+  border-bottom: 4px solid var(--color-light-orange);
   border-radius: 20px;
   margin-top: 160px;
 }
@@ -236,42 +247,33 @@ section {
 }
 
 .fa-download {
-  /* background-color: #2c3140; */
   padding-left: 5px;
 }
-#resume a span {
-  position: absolute;
-  right: 0;
-  top: 50%;
-  transform: translateY(-50%);
-  display: inline-block;
-  margin-left: 10px;
-}
+
 #resume a {
   background: linear-gradient(
     to bottom,
-    #55ccff 0%,
-    #55ccff 45%,
-    #d3c11a 70%,
-    #d3c11a 100%
+    var(--color-blue) 0%,
+    var(--color-blue) 45%,
+    var(--color-yellow) 70%,
+    var(--color-yellow) 100%
   );
-
   background-clip: text;
   color: transparent;
   font-size: 25px;
   margin: 10px;
   padding: 20px 0px;
   cursor: pointer;
-  font-family: "PT Serif", serif;
+  font-family: var(--ff-primary);
 }
 
 #myprojects {
   height: auto;
+  width: 100%;
   padding-bottom: 50px;
   /* text-align: center; */
   /* width: 0 auto; */
-  color: #ecdcdc;
-  font-size: 22px;
+  color: var(--color-light-orange);
 }
 #myprojects h1 {
   padding: 30px 0;
@@ -283,17 +285,21 @@ section {
 .project-container {
   max-width: 80%;
   line-height: 0;
-  /* margin: 0 auto; */
   margin-left: 80px;
   display: flex;
   flex-wrap: wrap;
-  /* height: auto; */
-  column-gap: 1.2em;
-  row-gap: 1.2em;
+  gap: 1.2em;
 }
 
 .project-item {
   flex: 1 240px;
+  position: relative;
+  overflow: hidden;
+  display: inline-block;
+  border-radius: 12px;
+  color: #0b6361;
+  /* Optional: Set a background color to match the border color */
+  background: linear-gradient(180deg, #39d2d7 20%, #c1b973 100%);
 }
 
 /* .expand {
@@ -301,8 +307,12 @@ section {
 } */
 
 .project-item img {
+  height: auto;
+  display: block;
+  border: 6px solid transparent; /* Set the initial transparent border */
+  border-radius: 10px; /* Set the border radius for the image */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3); /* Use box-shadow for a blur shadow effect */
   width: 100%;
-  height: 100%;
   object-fit: contain;
 }
 
@@ -311,30 +321,7 @@ section {
   margin: 10px 0 10px 0;
   font-size: 18px;
   font-weight: 300px;
-  font-family: "Tiro Telugu", serif;
-}
-
-.project-item {
-  position: relative;
-  overflow: hidden;
-}
-
-.project-item {
-  display: inline-block;
-  border-radius: 12px;
-  color: #031b1c;
-
-  /* Optional: Set a background color to match the border color */
-  background: linear-gradient(180deg, #39d2d7 20%, #c1b973 100%);
-}
-
-.project-item img {
-  width: 100%;
-  height: auto;
-  display: block;
-  border: 6px solid transparent; /* Set the initial transparent border */
-  border-radius: 10px; /* Set the border radius for the image */
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3); /* Use box-shadow for a blur shadow effect */
+  font-family: var(--ff-tertiary);
 }
 
 .project-item:hover img {
@@ -345,134 +332,188 @@ section {
   position: absolute;
   top: 0;
   left: 0;
-  width: 100%;
   height: 100%;
   background-color: rgba(0, 0, 0, 0.7);
   color: #fff;
   padding: 10px;
   opacity: 0;
   transition: opacity 0.3s ease-in-out;
-  height: 100%;
-  overflow: auto;
-  /* white-space: normal; */
 }
 
 .project-item:hover .description {
+  cursor: pointer;
   opacity: 1;
-  color: #ecdcdc;
+  color: #c5bfbf;
+  font-size: 18px;
+  border: 6px solid transparent;
+  border-image: linear-gradient(180deg, #4aabae 0%, #8f8638 100%) 1; /* Apply linear gradient as border image */
+  border-image-slice: 1;
+  /* Set the thickness of the border */
+  box-shadow: 0 0 1px rgba(0, 0, 0, 0.1);
 }
 
-.project-item:hover .description {
-  border: 6px solid transparent; /* Set the initial transparent border */
-  border-image: linear-gradient(180deg, #4aabae 0%, #8f8638 100%) 1; /* Apply linear gradient as border image */
-  border-image-slice: 1; /* Set the thickness of the border */
-  border-radius: 10px;
-  box-shadow: 0 0 1px rgba(0, 0, 0, 0.1); /* Optional: Add a regular box shadow for a smoother look */
-}
 .description p {
   display: block;
   margin: 5px 0;
-
-  border-radius: 10px;
   line-height: 1.5;
 }
-/*  */
+/* Contact  */
 #contact {
-  height: 80vh;
-  padding: 30px 0;
-  text-align: center;
-}
-#contact-form {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  background-image: url(images/connect9.png);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 85vh;
   width: 100%;
-  padding: 20px 0;
-  max-width: 600px; /* Set a maximum width for the form */
-  margin: 0 auto;
-  /* Center the form horizontally */
-}
-#name-input,
-input,
-textarea {
-  background-color: #1e242c;
-  color: white;
-  border: 1px solid #55ccff; /* You can adjust border color as needed */
-  padding: 8px;
-  margin: 10px 0;
-  display: block;
-  width: 500px;
-  border-radius: 10px;
-  /* text-decoration: none; */
-  border-color: #2d2727;
-  font-size: 18px;
-  font-family: "Tiro Telugu", serif;
-  font-weight: 300;
+  text-align: center;
 }
 
-textarea {
-  resize: none;
+#contact h1 {
+  padding: 30px 0;
+  /* margin-top: 10px; */
 }
-/* Style for the name input with the class */
-#submit-btn {
-  padding: 8px 25px;
-  background-color: #1e242c;
-  border: 1px solid #ecdcdc; /* Set border color */
-  text-align: center;
-  color: #55ccff;
-  border-radius: 10px;
-  cursor: pointer;
-  outline: none;
-  font-family: "PT Serif", serif;
-  font-size: large;
-  font-size: 22px;
+#contact-details {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  margin-top: 40px;
 }
+
+#contact-message {
+  position: relative;
+  /* background-image: url(images/connect12.png); */
+  /* background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat; */
+  font-family: cursive;
+  /* Adjust the opacity value (0.7 in this case) */
+  opacity: 1;
+  /* border: 2px solid #a95959; */
+  /* Add a border */
+  padding: 15px; /* Add padding for spacing inside the box */
+  /* Set a background color */
+  font-size: 36px; /* Adjust the font size as needed */
+  line-height: 1.6; /* Adjust the line height for spacing between lines */
+  border-radius: 20px;
+  color: #7ac2b8dd;
+  width: 25%; /* Adjust the width of the container as needed */
+}
+
+#contact-message span {
+  color: green;
+  font-family: var(--ff-secondary);
+
+  /* font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif; */
+}
+
+.social-icons {
+  padding-right: 120px;
+  /* font-size: 80px; */
+  display: flex;
+  /* text-align: center; */
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: start;
+}
+
+.social-icons p a {
+  color: var(--color-blue);
+  /* background: linear-gradient(#0dcbe4 40%, rgb(189, 200, 224) 60%); */
+  background: linear-gradient(to right, #d3c11a, #55ccff);
+  background-clip: text;
+  -webkit-background-clip: text; /* For older versions of Chrome/Safari */
+  color: transparent;
+  font-family: var(--ff-primary);
+  font-size: 24px;
+  font-weight: 500;
+  text-decoration: none;
+}
+
+.social-icons p a:hover {
+  color: #8f8638;
+}
+
+.social-icons p {
+  color: #5c7481;
+  padding-bottom: 40px;
+  font-size: 20px;
+}
+
+.social-icons p a:hover {
+  color: #8f8638;
+}
+
+.social-icons p i {
+  color: #72c1e3;
+  padding-right: 20px;
+  /* background-color: #39d2d7; */
+  font-size: 26px;
+  /* border-radius: 10px; */
+  /* margin-right: 20px; */
+}
+
+.section-class:nth-child(4) {
+  /* background-color: #3e4558; */
+  background-image: url(images/connect9.png);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.section-class:nth-child(even) {
+  background-color: var(--bkclr--black);
+}
+
 .section-class:nth-child(odd) {
   background-color: #3e4558;
 }
 
-.section-class:nth-child(even) {
-  background-color: #2c3140;
-}
-
+/* Footer */
+/* Footer */
 footer {
   display: flex;
-  background-color: #1e242c;
-  color: white;
-  /* padding: 90px 0; */
+  background: linear-gradient(to right, #2c3140, #1e242c);
   text-align: center;
   align-items: center;
   justify-content: center;
-  height: 20vh;
-  font-size: 30px;
+  height: 15vh;
+  width: 100%;
+  font-size: 26px;
+  font-family: var(--ff-primary);
 }
 
-.fa-linkedin-square,
-.fa-facebook-square,
-.fa-github-square {
-  color: #55ccff;
-  /* background-color: white;  */
-  font-size: 60px;
-  /* padding: 3px 3px;  */
-  /* Adjust padding for better visual appearance */
-  /* border-radius: 3px; */
-  /* margin: 5px */
-  /* Add margin for spacing betprojectween icons */
-  text-decoration: none; /* Remove underline for anchor elements */
-  text-indent: 20px;
-  /* font-size: 180px; */
+footer p i.left,
+footer p i.right {
+  margin: 0 5px;
+  /* font-size: inherit; */
 }
 
-.fa-linkedin-square:hover,
-.fa-facebook-square:hover,
-.fa-github-square:hover {
-  color: #ecdcdc;
-  /* Change background color on hover */
+footer p {
+  background: linear-gradient(to right, #55ccff, #d3c11a);
+  -webkit-background-clip: text; /* For Webkit (Safari, Chrome) */
+  background-clip: text;
+  /* Apply gradient to text */
+  color: transparent;
+  /* margin: 0; */
+  /* padding: 0; */
 }
 
-foooter a {
-  background-color: #55ccff;
-  margin-top: 20px;
-  justify-content: center;
-  color: red;
+/* Add this to your existing style.css file */
+
+#title {
+  opacity: 0;
+  transform: translateY(-50%) scale(0.5);
+  animation: revealText 1.2s ease-in-out forwards;
+}
+
+@keyframes revealText {
+  from {
+    opacity: 0;
+    transform: translateY(-50%) scale(0.5);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
 }
