@@ -52,3 +52,28 @@ document.addEventListener("DOMContentLoaded", function () {
   // Initial update when the page loads
   updateActiveNavItem();
 });
+
+window.addEventListener("scroll", function () {
+  let scrollPosition = window.scrollY;
+  let windowHeight = window.innerHeight;
+  let totalHeight = document.body.scrollHeight - windowHeight;
+
+  // Calculate the brightness based on the scroll position
+  let brightness = 1 - (scrollPosition / totalHeight) * 0.5; // Adjust the factor (0.5) as needed
+
+  // Apply the brightness filter to the background element
+  document.querySelector(
+    ".background"
+  ).style.filter = `brightness(${brightness})`;
+});
+
+// toogle
+
+document.addEventListener("DOMContentLoaded", function () {
+  const hamburgerMenu = document.querySelector(".hamburger-menu");
+  const header = document.querySelector("header");
+
+  hamburgerMenu.addEventListener("click", function () {
+    header.classList.toggle("show-header");
+  });
+});
