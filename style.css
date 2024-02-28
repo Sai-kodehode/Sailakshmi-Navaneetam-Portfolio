@@ -11,22 +11,8 @@
 body {
   padding: 0;
   margin: 0;
-}
-
-header {
-  transition: transform 0.3s ease;
-}
-
-header.show-header {
-  display: none;
-}
-
-.hamburger-menu {
-  /* text-align: right; */
-  position: fixed;
-  top: 10px;
-  right: 10px;
-  color: wheat;
+  /* width: 100%; */
+  overflow-x: hidden;
 }
 /* variables */
 :root {
@@ -42,6 +28,27 @@ header.show-header {
   --ff-tertiary: "Tiro Telugu", serif;
 }
 
+.hamburger-menu {
+  position: fixed;
+  top: 0px;
+  right: 0px;
+  padding: 4px;
+  color: rgb(5, 126, 231);
+  background-color: #1e242c;
+  font-size: 2em;
+  z-index: 101;
+  cursor: pointer;
+}
+.close-menu {
+  position: fixed;
+  top: 0px;
+  right: 0px;
+  padding: 10px;
+  color: wheat;
+  z-index: 102;
+  cursor: pointer;
+}
+
 .background {
   position: fixed;
   top: 0;
@@ -50,26 +57,133 @@ header.show-header {
   height: 100%;
   background: url("images/Landing\ page\ -\ background\ image4.png");
   background-size: cover;
+  background-position: center center;
   transition: filter 0.0001s ease;
   z-index: -1;
 }
-/* Landing Page */
+
+header {
+  position: fixed;
+  top: 0;
+  right: 0;
+  /* justify-content: space-evenly; Adjusted to space-evenly */
+  /* align-items: center; Center items vertically */
+  /* height: 100vh; */
+  /* width: 100%; */
+  /* padding: 40px; */
+
+  /* transform: translateY(-50%); */
+  z-index: 100;
+}
+
+nav {
+  background-color: var(--bkclr--black);
+
+  width: 100%;
+  height: 100%;
+  list-style-type: none;
+  text-align: center;
+  right: 0px;
+  top: 0px;
+  position: fixed;
+}
+
+nav ul {
+  list-style-type: none;
+  text-align: center;
+}
+
+nav li {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  padding: 5px 10px;
+  margin: 50px 0;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+nav a {
+  background: linear-gradient(
+    to bottom,
+    var(--color-blue) 0%,
+    var(--color-blue) 45%,
+    var(--color-yellow) 70%,
+    var(--color-yellow) 100%
+  );
+  text-decoration: none;
+  background-clip: text;
+  color: transparent;
+  font-size: 20px;
+  /* margin: 10px 0; */
+  padding: 5px 5px;
+  cursor: pointer;
+  font-family: var(--ff-primary);
+}
+
+nav li:hover {
+  /* need to check */
+  background-color: #26272a;
+  /* color: var(--color-blue); */
+  border: 2px solid var(--color-yellow);
+}
+nav li a:hover {
+  color: var(--color-blue);
+}
+
+nav li#homeNavItem.active,
+nav li#aboutMeNavItem.active,
+nav li#projectsNavItem.active,
+nav li#contactNavItem.active {
+  background-color: #43495b;
+}
+/* main section */
+main section {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  font-family: var(--ff-primary);
+  font-size: 40px;
+  font-weight: 600;
+}
+
+#name {
+  background: linear-gradient(rgb(7, 172, 242) 40%, rgba(236, 220, 220, 1) 60%);
+  background-clip: text;
+  color: transparent;
+  margin: 0;
+  padding: 0px 0 20px 0;
+}
+
+#designation {
+  color: var(--color-blue);
+}
 
 @media only screen and (min-width: 768px) {
-  .hamburger-menu {
+  .close-menu {
     display: none;
   }
-
   header {
     position: fixed;
     top: 50%;
     right: 0;
+    padding: 0px;
+    color: wheat;
     transform: translateY(-50%);
-    z-index: 2;
+    z-index: 100;
   }
 
   nav {
-    /* background-color: var(--bkclr--black); */
+    background-color: var(--bkclr--black);
+    /* need to check */
+    height: 50%;
+    list-style-type: none;
+    text-align: center;
+    right: 0;
+    top: 0px;
+    position: relative;
     border-left: 2px solid var(--color-light-orange);
   }
 
@@ -83,6 +197,7 @@ header.show-header {
     margin: 35px 0px;
     cursor: pointer;
     text-decoration: none;
+    display: block;
   }
 
   nav a {
@@ -102,49 +217,58 @@ header.show-header {
     cursor: pointer;
     font-family: var(--ff-primary);
   }
-
-  nav li:hover {
-    /* need to check */
-    background-color: #26272a;
-    /* color: var(--color-blue); */
-    border-bottom: 4px solid var(--color-yellow);
-  }
-  nav li a:hover {
-    color: var(--color-blue);
+}
+@media (max-width: 786px) {
+  nav {
+    display: none;
   }
 
-  nav li#homeNavItem.active,
-  nav li#aboutMeNavItem.active,
-  nav li#projectsNavItem.active,
-  nav li#contactNavItem.active {
-    background-color: #43495b;
+  header {
+    display: none;
+  }
+
+  .hamburger-menu {
+    display: block;
+  }
+
+  .close-menu {
+    display: none;
+  }
+
+  nav.active,
+  header.active {
+    display: block;
+  }
+
+  nav.active .hamburger-menu {
+    display: none;
+  }
+
+  nav.active .close-menu {
+    display: block;
+  }
+
+  header.active {
+    display: block;
   }
 }
 
-/* main section */
-main section {
-  width: 100%;
-  height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-family: var(--ff-primary);
-  font-size: 40px;
-  font-weight: 600;
-}
+@media (min-width: 787px) {
+  nav {
+    display: block;
+  }
 
-#name {
-  background: linear-gradient(rgb(7, 172, 242) 40%, rgba(236, 220, 220, 1) 60%);
-  background-clip: text;
-  color: transparent;
-  margin: 0;
-  padding: 40px 0;
-  /* text-align: start; */
-}
+  header {
+    display: block;
+  }
 
-#designation {
-  color: var(--color-blue);
-  text-align: end;
+  .hamburger-menu {
+    display: none;
+  }
+
+  .close-menu {
+    display: none;
+  }
 }
 
 /* About Me */
@@ -264,55 +388,63 @@ main section {
 @media only screen and (min-width: 768px) {
   #aboutme {
     padding: 20px 0 0 0;
+    max-height: 100vh;
   }
-
+  #aboutme h1 {
+    margin-bottom: 0px;
+  }
   #aboutme-div {
     display: grid;
-    grid-template-columns: 1fr auto;
-    grid-template-rows: 0.7fr 0.1fr 0.1fr;
+    grid-template-columns: 1fr 4fr;
     grid-template-areas:
       "pic pitch"
       "sks pitch"
-      "set cv";
+      "set pitch"
+      "cv cv";
     align-items: center;
     text-align: center;
-    row-gap: 10px;
+    row-gap: 5px;
     column-gap: 40px;
-    width: 100%;
     height: auto;
-    margin: 0 auto;
-    padding: 60px 80px 0px 80px;
+    margin: 20px 200px 0 50px;
   }
   #aboutme-div .image {
     grid-area: pic;
+    align-self: self-start;
+    margin: 0 auto;
   }
   #pitch {
     grid-area: pitch;
-    width: 90%;
-    height: auto;
     font-size: 20px;
-    margin: 50px 0;
+    max-width: 90%;
+    min-width: 350px;
+    margin: 0 auto;
+    align-self: flex-start;
   }
   .skills-heading {
     grid-area: sks;
-    width: fit-content;
-    justify-self: center;
-    align-items: center;
-    margin-top: 20px;
+    margin: 0 auto;
+    /* width: fit-content; */
+    justify-self: self-start;
+    /* align-items: center; */
+    margin-bottom: 10px; /* Adjust the margin as needed */
   }
   #skill-set {
     grid-area: set;
-    width: 100%;
-    height: auto;
+    width: 90%;
+    height: fit-content; /* Set a fixed height for the skills and skill set rows */
     padding: 5px 5px 0;
     font-style: normal;
     border-radius: 10px;
+    margin: 0 auto;
   }
+
   #resume {
     grid-area: cv;
-    justify-self: center;
-    align-self: end;
-    margin-top: 20px;
+    justify-self: self-end;
+    align-self: flex-start; /* Change to flex-start to always push down */
+    margin-top: 10px;
+    margin-right: 200px;
   }
 }
 
@@ -568,7 +700,8 @@ main section {
 }
 
 #contact h1 {
-  padding: 30px 0 0 0;
+  padding: 30px 0;
+  margin-bottom: 30px;
 }
 
 #contact-details {
@@ -576,22 +709,16 @@ main section {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin-top: 20px;
+  margin: 0px 20px;
 }
 
 #contact-message {
-  background: linear-gradient(
-    to right,
-
-    #1e2535,
-    transparent,
-    #1e2535
-  );
+  background: linear-gradient(to right, #1e2535, transparent, #1e2535);
   font-family: cursive;
   padding: 15px;
-  margin: 15px;
+  /* margin: 15px; */
   border-radius: 12px;
-  font-size: 24px;
+  font-size: 22px;
   line-height: 1.6;
   color: #60ddccdd;
 }
@@ -602,6 +729,7 @@ main section {
 }
 
 .social-icons {
+  margin-top: 40px;
   color: var(--color-blue);
 }
 
@@ -643,7 +771,8 @@ main section {
     /* gap: 80px; */
     align-items: center;
     margin-top: 40px;
-    width: 90%;
+    width: 100%;
+    margin-top: 80px;
   }
 
   #contact-message {
@@ -658,7 +787,7 @@ main section {
     font-size: 30px;
     border-radius: 20px;
     text-overflow: none;
-    min-width: 20%;
+    min-width: 250px;
     max-width: 28%;
   }
 
@@ -667,6 +796,7 @@ main section {
   }
 
   .social-icons {
+    margin-top: 0px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;

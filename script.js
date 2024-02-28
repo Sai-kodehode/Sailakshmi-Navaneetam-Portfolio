@@ -67,13 +67,41 @@ window.addEventListener("scroll", function () {
   ).style.filter = `brightness(${brightness})`;
 });
 
-// toogle
-
+// Hamburger menu functionality
 document.addEventListener("DOMContentLoaded", function () {
-  const hamburgerMenu = document.querySelector(".hamburger-menu");
+  const nav = document.querySelector("nav");
   const header = document.querySelector("header");
+  const hamburgerMenu = document.querySelector(".hamburger-menu");
+  const closeMenu = document.querySelector(".close-menu");
+  const sectionLinks = document.querySelectorAll("nav a");
+
+  // Function to close the navigation and header
+  function closeNavigation() {
+    nav.classList.remove("active");
+    header.classList.remove("active");
+    hamburgerMenu.innerHTML = "&#9776;"; // Change back to hamburger icon
+  }
 
   hamburgerMenu.addEventListener("click", function () {
-    header.classList.toggle("show-header");
+    if (nav.classList.contains("active")) {
+      closeNavigation();
+    } else {
+      nav.classList.add("active");
+      header.classList.add("active");
+      hamburgerMenu.innerHTML = "&#10006;"; // Change to X icon
+    }
+  });
+
+  closeMenu.addEventListener("click", function () {
+    closeNavigation();
+  });
+
+  // Close the navigation and header when a section link is clicked
+  sectionLinks.forEach(function (link) {
+    link.addEventListener("click", function () {
+      if (window.innerWidth < 786) {
+        closeNavigation();
+      }
+    });
   });
 });
