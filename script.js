@@ -99,9 +99,19 @@ document.addEventListener("DOMContentLoaded", function () {
   // Close the navigation and header when a section link is clicked
   sectionLinks.forEach(function (link) {
     link.addEventListener("click", function () {
-      if (window.innerWidth < 786) {
+      if (window.innerWidth < 785) {
         closeNavigation();
       }
     });
+  });
+  let isHamburgerIconSet = false;
+
+  window.addEventListener("resize", function () {
+    if (window.innerWidth < 786 && !isHamburgerIconSet) {
+      // Set hamburger icon as default when window width is less than 786px
+      closeNavigation();
+    } else if (window.innerWidth >= 786) {
+      isHamburgerIconSet = false;
+    }
   });
 });

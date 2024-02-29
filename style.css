@@ -4,7 +4,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  /* user-select: none; */
+  user-select: none;
   scroll-behavior: smooth;
 }
 
@@ -32,10 +32,10 @@ body {
   position: fixed;
   top: 0px;
   right: 0px;
-  padding: 4px;
-  color: rgb(5, 126, 231);
-  background-color: #1e242c;
-  font-size: 2em;
+  padding: 10px 5px 0 0;
+  color: rgb(231, 114, 5);
+  /* background-color: #1e242c; */
+  font-size: 25px;
   z-index: 101;
   cursor: pointer;
 }
@@ -43,7 +43,7 @@ body {
   position: fixed;
   top: 0px;
   right: 0px;
-  padding: 10px;
+  padding: 10px 5px 0 0;
   color: wheat;
   z-index: 102;
   cursor: pointer;
@@ -78,7 +78,6 @@ header {
 
 nav {
   background-color: var(--bkclr--black);
-
   width: 100%;
   height: 100%;
   list-style-type: none;
@@ -97,8 +96,8 @@ nav li {
   display: flex;
   flex-direction: column;
   justify-content: space-around;
-  padding: 5px 10px;
-  margin: 50px 0;
+  padding: 20px 10px;
+  margin: 60px 0;
   cursor: pointer;
   text-decoration: none;
 }
@@ -116,19 +115,13 @@ nav a {
   color: transparent;
   font-size: 20px;
   /* margin: 10px 0; */
-  padding: 5px 5px;
+  padding: 10px 5px;
   cursor: pointer;
   font-family: var(--ff-primary);
 }
 
 nav li:hover {
-  /* need to check */
   background-color: #26272a;
-  /* color: var(--color-blue); */
-  border: 2px solid var(--color-yellow);
-}
-nav li a:hover {
-  color: var(--color-blue);
 }
 
 nav li#homeNavItem.active,
@@ -136,29 +129,6 @@ nav li#aboutMeNavItem.active,
 nav li#projectsNavItem.active,
 nav li#contactNavItem.active {
   background-color: #43495b;
-}
-/* main section */
-main section {
-  width: 100%;
-  height: 100vh;
-  display: flex;
-  justify-content: space-evenly;
-  align-items: center;
-  font-family: var(--ff-primary);
-  font-size: 40px;
-  font-weight: 600;
-}
-
-#name {
-  background: linear-gradient(rgb(7, 172, 242) 40%, rgba(236, 220, 220, 1) 60%);
-  background-clip: text;
-  color: transparent;
-  margin: 0;
-  padding: 0px 0 20px 0;
-}
-
-#designation {
-  color: var(--color-blue);
 }
 
 @media only screen and (min-width: 768px) {
@@ -181,8 +151,8 @@ main section {
     height: 50%;
     list-style-type: none;
     text-align: center;
-    right: 0;
-    top: 0px;
+    /* right: 0; */
+    /* top: 0px; */
     position: relative;
     border-left: 2px solid var(--color-light-orange);
   }
@@ -212,13 +182,13 @@ main section {
     background-clip: text;
     color: transparent;
     font-size: 20px;
-    margin: 10px;
+    margin: 15px;
     padding: 10px 0px;
     cursor: pointer;
     font-family: var(--ff-primary);
   }
 }
-@media (max-width: 786px) {
+@media (max-width: 785px) {
   nav {
     display: none;
   }
@@ -253,7 +223,7 @@ main section {
   }
 }
 
-@media (min-width: 787px) {
+@media (min-width: 786px) {
   nav {
     display: block;
   }
@@ -271,6 +241,30 @@ main section {
   }
 }
 
+/* main section */
+
+main section {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  font-family: var(--ff-primary);
+  font-size: 40px;
+  font-weight: 600;
+}
+
+#name {
+  background: linear-gradient(rgb(7, 172, 242) 20%, rgba(236, 220, 220, 1) 60%);
+  background-clip: text;
+  color: transparent;
+  margin: 0;
+  padding: 0px 0 20px 0;
+}
+
+#designation {
+  color: var(--color-blue);
+}
 /* About Me */
 
 #aboutme {
@@ -299,6 +293,10 @@ main section {
 .me-heading {
   color: var(--color-blue);
   text-decoration: underline;
+  font-family: var(--ff-secondary);
+  font-style: normal;
+  font-size: 40px;
+  font-weight: 300;
 }
 
 .main-color {
@@ -388,7 +386,8 @@ main section {
 @media only screen and (min-width: 768px) {
   #aboutme {
     padding: 20px 0 0 0;
-    max-height: 100vh;
+    /* max-height: 100vh; */
+    min-height: 100vh;
   }
   #aboutme h1 {
     margin-bottom: 0px;
@@ -410,13 +409,13 @@ main section {
   }
   #aboutme-div .image {
     grid-area: pic;
-    align-self: self-start;
+    align-self: ce;
     margin: 0 auto;
   }
   #pitch {
     grid-area: pitch;
     font-size: 20px;
-    max-width: 90%;
+    max-width: 95%;
     min-width: 350px;
     margin: 0 auto;
     align-self: flex-start;
@@ -425,13 +424,14 @@ main section {
     grid-area: sks;
     margin: 0 auto;
     /* width: fit-content; */
-    justify-self: self-start;
+    justify-self: self-end;
     /* align-items: center; */
     margin-bottom: 10px; /* Adjust the margin as needed */
   }
   #skill-set {
     grid-area: set;
     width: 90%;
+    justify-self: self-start;
     height: fit-content; /* Set a fixed height for the skills and skill set rows */
     padding: 5px 5px 0;
     font-style: normal;
@@ -714,17 +714,23 @@ main section {
 
 #contact-message {
   background: linear-gradient(to right, #1e2535, transparent, #1e2535);
-  font-family: cursive;
+  font-family: "Merriweather", serif;
+  font-weight: 500;
+  font-style: normal;
   padding: 15px;
   /* margin: 15px; */
   border-radius: 12px;
-  font-size: 22px;
-  line-height: 1.6;
-  color: #60ddccdd;
+  font-size: 18px;
+  line-height: 1.9;
+  color: #deefefdd;
 }
 
 #contact-message span {
-  color: green;
+  font-family: "Merriweather", serif;
+  color: rgb(0, 139, 0);
+  font-style: normal;
+  font-weight: 850;
+  font-size: 26px;
   font-family: var(--ff-secondary);
 }
 
@@ -738,10 +744,12 @@ main section {
   font-size: 25px;
 }
 .social-icons p a {
-  color: #a59c4b;
-  font-family: var(--ff-primary);
+  /* color: #a59c4b; */
+  color: #ecf0f0dd;
+  font-family: var(--ff-tertiary);
   font-size: 20px;
-  font-weight: 500;
+  font-style: normal;
+  /* font-weight: 300; */
   text-decoration: none;
   padding-left: 10px;
 }
@@ -749,7 +757,7 @@ main section {
 .social-icons p a:hover {
   color: #60ddccdd;
   text-decoration: underline;
-  font-size: 26px;
+  /* font-size: 26px; */
 }
 
 .social-icons p i {
@@ -767,10 +775,11 @@ main section {
   #contact-details {
     display: flex;
     flex-direction: row;
-    justify-content: space-around;
+    justify-content: space-evenly;
     /* gap: 80px; */
     align-items: center;
-    margin-top: 40px;
+    /* margin: 0px 0px; */
+    /* margin-top: 40px; */
     width: 100%;
     margin-top: 80px;
   }
@@ -784,14 +793,15 @@ main section {
       transparent,
       #25241e
     );
-    font-size: 30px;
+    font-size: 26px;
     border-radius: 20px;
     text-overflow: none;
     min-width: 250px;
-    max-width: 28%;
+    max-width: 25%;
   }
 
   #contact-message span {
+    font-family: "Merriweather", serif;
     color: rgba(190, 167, 14, 0.776);
   }
 
@@ -859,4 +869,11 @@ footer p {
     opacity: 1;
     transform: translateY(0) scale(1);
   }
+}
+
+.section-class {
+  border-bottom: 1px solid #55ccff;
+}
+#contact {
+  border: none;
 }
