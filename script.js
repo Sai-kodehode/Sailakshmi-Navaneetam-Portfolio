@@ -3,10 +3,9 @@ document.addEventListener("DOMContentLoaded", function () {
   function handleIntersection(entries) {
     entries.forEach((entry) => {
       if (entry.isIntersecting) {
-        // Get the id of the intersecting section
+        // Getting the id of the intersecting section
         const currentSectionId = entry.target.id;
-
-        // Remove the active class from all navigation items
+        // Removing the active class from all navigation items
         document.querySelectorAll("nav ul li").forEach(function (navItem) {
           navItem.classList.remove("active");
         });
@@ -41,16 +40,15 @@ document.addEventListener("DOMContentLoaded", function () {
   // Create an Intersection Observer
   const observer = new IntersectionObserver(handleIntersection, {
     root: null, // Use the viewport as the root
-    threshold: 0.5, // Trigger when 50% of the target is visible
+    threshold: 0.1, // Trigger when 10% of the target is visible
+    offset: 500,
   });
-
-  // Observe each section with the class "section-class"
+  // Observing each section with the class "section-class"
   document.querySelectorAll(".section-class").forEach((section) => {
     observer.observe(section);
   });
 
   // Initial update when the page loads
-  updateActiveNavItem();
 });
 
 window.addEventListener("scroll", function () {
@@ -99,7 +97,7 @@ document.addEventListener("DOMContentLoaded", function () {
   // Close the navigation and header when a section link is clicked
   sectionLinks.forEach(function (link) {
     link.addEventListener("click", function () {
-      if (window.innerWidth < 785) {
+      if (window.innerWidth < 768) {
         closeNavigation();
       }
     });
@@ -107,10 +105,10 @@ document.addEventListener("DOMContentLoaded", function () {
   let isHamburgerIconSet = false;
 
   window.addEventListener("resize", function () {
-    if (window.innerWidth < 786 && !isHamburgerIconSet) {
-      // Set hamburger icon as default when window width is less than 786px
+    if (window.innerWidth < 768 && !isHamburgerIconSet) {
+      // Set hamburger icon as default when window width is less than 768px
       closeNavigation();
-    } else if (window.innerWidth >= 786) {
+    } else if (window.innerWidth >= 768) {
       isHamburgerIconSet = false;
     }
   });
