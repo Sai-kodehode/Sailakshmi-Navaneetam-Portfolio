@@ -63,6 +63,7 @@ header {
 }
 
 nav {
+  user-select: none;
   background-color: var(--bkclr--black);
   width: 100%;
   height: 100%;
@@ -209,7 +210,7 @@ main section {
   background-clip: text;
   color: transparent;
   margin: 0;
-  padding: 0 0 0.5em 0; /* Converted to em */
+  padding: 0 0 0.5em 0;
 }
 
 #designation {
@@ -243,15 +244,9 @@ main section {
   main section {
     width: 90%;
     height: 100vh;
-    /* display: flex;
-
-    flex-direction: column;
-    justify-content: space-evenly;
-    align-items: center; */
   }
   #designation {
     font-size: 1.5rem;
-    /* margin-left: 10rem; */
     letter-spacing: 0.3em;
   }
 }
@@ -266,11 +261,11 @@ main section {
   min-height: 100vh;
   text-align: center;
   align-items: center;
-  padding: 1.875em; /* Converted to em */
+  padding: 1.875em;
 }
 
 #aboutme h1 {
-  margin-bottom: 1.275em; /* Converted to em */
+  margin-bottom: 1.275em;
 }
 .about-heading,
 .me-heading {
@@ -278,7 +273,7 @@ main section {
   text-decoration: underline;
   font-family: var(--ff-secondary);
   font-style: normal;
-  font-size: 40px; /* Converted to em */
+  font-size: 40px;
   font-weight: 300;
 }
 
@@ -303,33 +298,33 @@ main section {
 }
 
 #pitch {
-  font-size: 1.25em; /* Converted to em */
+  font-size: 1.25em;
   font-family: var(--ff-tertiary);
   font-style: normal;
   text-align: start;
   letter-spacing: 0.5px;
-  padding: 1.25em 0.625em 0.3125em 1.25em; /* Converted to em */
+  padding: 1.25em 0.625em 0.3125em 1.25em;
 }
 #pitch p {
   line-height: 2;
-  margin-bottom: 1.25em; /* Converted to em */
+  margin-bottom: 1.25em;
   text-indent: 60px;
 }
 .skills-heading {
   color: var(--color-blue);
   background-color: var(--bkclr--black);
   width: max-content;
-  padding: 0.375em 0.625em; /* Converted to em */
+  padding: 0.375em 0.625em;
   text-decoration: underline;
   border-radius: 10px;
   margin: 0 auto;
 }
 
 #skill-set {
-  margin-top: 1.875em; /* Converted to em */
+  margin-top: 1.875em;
   padding: 1.875em;
   background-color: var(--bkclr--black);
-  font-size: 1.125em; /* Converted to em */
+  font-size: 1.125em;
   font-family: var(--ff-tertiary);
   border-radius: 16px;
 }
@@ -337,8 +332,8 @@ main section {
 #resume {
   background-color: var(--bkclr--black);
   border: none;
-  padding: 0.5em 0.75em; /* Converted to em */
-  font-size: 1.25em; /* Converted to em */
+  padding: 0.5em 0.75em;
+  font-size: 1.25em;
   cursor: pointer;
   border-left: 0.25em solid var(--color-light-orange);
   border-bottom: 0.25em solid var(--color-light-orange);
@@ -356,7 +351,7 @@ main section {
 }
 
 .fa-download {
-  padding-left: 0.3125em; /* Converted to em */
+  padding-left: 0.3125em;
 }
 
 #resume a {
@@ -369,8 +364,8 @@ main section {
   );
   background-clip: text;
   color: transparent;
-  font-size: 1.5625em; /* Converted to em */
-  margin: 0.625em; /* Converted to em */
+  font-size: 1.5625em;
+  margin: 0.625em;
   padding: 1.25em 0;
   cursor: pointer;
   font-family: var(--ff-primary);
@@ -379,7 +374,6 @@ main section {
 @media only screen and (min-width: 768px) {
   #aboutme {
     padding: 1.25em 0 0 0;
-    /* max-height: 100vh; */
     min-height: 100vh;
   }
   #aboutme h1 {
@@ -398,7 +392,7 @@ main section {
     row-gap: 10px;
     column-gap: 20px;
     height: auto;
-    margin: 1.25em 12.5em 0 3.125em; /* Converted to em */
+    margin: 1.25em 12.5em 0 3.125em;
   }
   #aboutme-div .image {
     grid-area: pic;
@@ -407,7 +401,7 @@ main section {
   }
   #pitch {
     grid-area: pitch;
-    font-size: 1.3em; /* Converted to em */
+    font-size: 1.3em;
     max-width: 90%;
     min-width: 350px;
     margin: 0 auto;
@@ -421,7 +415,7 @@ main section {
     grid-area: sks;
     margin: 0 auto;
     justify-self: self-end;
-    margin-bottom: 0.625em; /* Converted to em */
+    margin-bottom: 0.625em;
   }
   #skill-set {
     grid-area: set;
@@ -446,11 +440,11 @@ main section {
 #myprojects {
   height: auto;
   width: 100%;
-  padding-bottom: 5rem; /* Converted to rem */
+  padding-bottom: 5rem;
 }
 
 #myprojects h1 {
-  padding: 2rem 0; /* Converted to rem */
+  padding: 2rem 0;
   width: fit-content;
   margin: 0 auto;
 }
@@ -458,7 +452,7 @@ main section {
 .project-container {
   max-width: 90%;
   line-height: 0;
-  margin: 2rem 5rem; /* Converted to rem and em */
+  margin: 2rem 5rem;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
@@ -479,28 +473,24 @@ main section {
 }
 
 .project-item img {
-  height: 90%; /* Set a fixed height */
-  width: 100%; /* Set a fixed width */
+  height: 90%;
+  width: 100%;
   display: block;
   border: 6px solid transparent;
   border-radius: 10px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
-  object-fit: fill; /* Maintain aspect ratio and cover the container */
+  object-fit: fill;
 }
 .project-item .project-name {
-  /* padding: 0 0 0 1em; */
-  /* Converted to em */
   text-align: center;
-  margin: 1em 0; /* Converted to em */
-  font-size: 1.25rem; /* Converted to rem */
+  margin: 1em 0;
+  font-size: 1.25rem;
   color: #222323;
   font-weight: 500;
   font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
     "Lucida Sans", Arial, sans-serif;
 }
-/* .project-item:hover img {
-  transform: scale(1.1);
-} */
+
 .description {
   position: absolute;
   top: 0;
@@ -509,10 +499,9 @@ main section {
   background-color: rgba(0, 0, 0, 0.7);
   color: #ffffff;
   padding: 1em;
-  /* Converted to em */
   opacity: 0;
   font-size: 1.25rem;
-  /* transition: opacity 1s ease-in; */
+  /* transition: opacity 0s ease-in; */
   transition: opacity 0.6s ease-out;
 }
 
@@ -528,14 +517,14 @@ main section {
 }
 .description p {
   display: block;
-  margin: 0.125em 0; /* Converted to em */
+  margin: 0.125em 0;
   line-height: 2.5;
 }
 
 @media only screen and (min-width: 768px) {
   .project-container {
     max-width: 80%;
-    margin-left: 4rem; /* Converted to rem */
+    margin-left: 4rem;
   }
 }
 
@@ -603,7 +592,6 @@ main section {
 .social-icons p a:hover {
   color: #60ddccdd;
   text-decoration: underline;
-  /* font-size: 26px; */
 }
 
 .social-icons p i {
@@ -678,7 +666,6 @@ main section {
     color: #8f8638;
   }
   .social-icons p {
-    /* padding-bottom: 2.5em; */
     font-size: 1.25rem;
   }
   .social-icons p i {
@@ -697,30 +684,28 @@ footer {
   justify-content: center;
   min-height: 10vh;
   width: 100%;
-  font-size: 1rem; /* Font size in rem */
+  font-size: 1rem;
   font-family: var(--ff-primary);
 }
 
 footer p {
   background: linear-gradient(to right, #55ccff, #d3c11a);
-  -webkit-background-clip: text; /* For Webkit (Safari, Chrome) */
+  -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
 }
 
-/* Adjusted with em units for padding/margin */
 footer p {
-  padding: 0.5em; /* Padding in em */
+  padding: 0.5em;
 }
 
 @media only screen and (min-width: 768px) {
   footer {
-    font-size: 1.5rem; /* Responsive font size in rem */
+    font-size: 1.5rem;
   }
 
   footer p {
     padding: 1em;
-    /* Responsive padding in em */
   }
 }
 
