@@ -4,7 +4,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  user-select: none;
+  /* user-select: none; */
   scroll-behavior: smooth;
 }
 
@@ -201,7 +201,7 @@ main section {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  font-size: 2rem;
+  font-size: 2.5rem;
   font-weight: 400;
 }
 #name {
@@ -213,6 +213,9 @@ main section {
 }
 
 #designation {
+  font-size: 1.5rem;
+  /* font-size: 2rem; */
+  letter-spacing: 0.2em;
   color: var(--color-blue);
 }
 
@@ -235,14 +238,21 @@ main section {
 
   #title {
     font-family: var(--ff-primary);
-    font-size: 2.5rem;
+    font-size: 3rem;
   }
   main section {
-    width: 100%;
+    width: 90%;
     height: 100vh;
-    display: flex;
+    /* display: flex;
+
+    flex-direction: column;
     justify-content: space-evenly;
-    align-items: center;
+    align-items: center; */
+  }
+  #designation {
+    font-size: 1.5rem;
+    /* margin-left: 10rem; */
+    letter-spacing: 0.3em;
   }
 }
 
@@ -260,7 +270,7 @@ main section {
 }
 
 #aboutme h1 {
-  margin-bottom: 1.875em; /* Converted to em */
+  margin-bottom: 1.275em; /* Converted to em */
 }
 .about-heading,
 .me-heading {
@@ -373,7 +383,7 @@ main section {
     min-height: 100vh;
   }
   #aboutme h1 {
-    margin-bottom: 0px;
+    margin-bottom: 10px;
   }
   #aboutme-div {
     display: grid;
@@ -397,11 +407,15 @@ main section {
   }
   #pitch {
     grid-area: pitch;
-    font-size: 1.25em; /* Converted to em */
+    font-size: 1.3em; /* Converted to em */
     max-width: 90%;
     min-width: 350px;
     margin: 0 auto;
     align-self: flex-start;
+  }
+
+  #pitch p {
+    line-height: 1.8;
   }
   .skills-heading {
     grid-area: sks;
@@ -424,10 +438,6 @@ main section {
     grid-area: cv;
     justify-self: self-end;
     align-self: flex-start;
-    /* margin-top: 1; */
-    /* Converted to em */
-    /* margin-right: 12.5em; */
-    /* Converted to em */
     margin: 0 12.5em 3.75em 0;
   }
 }
@@ -446,19 +456,21 @@ main section {
 }
 
 .project-container {
-  max-width: 100%;
+  max-width: 90%;
   line-height: 0;
   margin: 2rem 5rem; /* Converted to rem and em */
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
   gap: 2em;
 }
 
 .project-item {
-  flex: 1 340px;
-  height: 340px;
+  /* flex: 1 340px; */
+  height: 360px;
+  width: 360px;
   /* need to check */
-  max-width: 70%;
+  /* max-width: 70%; */
   position: relative;
   overflow: hidden;
   display: inline-block;
@@ -495,14 +507,13 @@ main section {
   left: 0;
   height: 100%;
   background-color: rgba(0, 0, 0, 0.7);
-  color: #fff;
+  color: #ffffff;
   padding: 1em;
   /* Converted to em */
   opacity: 0;
   font-size: 1.25rem;
-  /* transition: opacity 1s ease-in-out; */
-  transition: opacity 1s ease-in;
-  transition: opacity 1.5s ease-out;
+  /* transition: opacity 1s ease-in; */
+  transition: opacity 0.6s ease-out;
 }
 
 .project-container a {
@@ -511,7 +522,7 @@ main section {
 .project-item:hover .description {
   cursor: pointer;
   opacity: 1;
-  color: #c5bfbf;
+  color: #ffffff;
   padding: 1em;
   font-size: 1.25rem;
 }
