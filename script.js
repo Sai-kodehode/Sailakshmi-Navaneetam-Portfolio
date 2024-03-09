@@ -114,8 +114,7 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 });
 
-// Add an event listener for touchstart
-document.addEventListener("touchstart", function (event) {
+document.addEventListener("touchend", function (event) {
   // Your touch-related styles go here
   var target = event.target;
   if (target.classList.contains("project-item")) {
