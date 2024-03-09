@@ -214,7 +214,6 @@ main section {
 }
 
 /* About Me */
-
 #aboutme {
   display: flex;
   flex-direction: column;
@@ -506,6 +505,15 @@ main section {
   padding: 1em;
   font-size: 1.24rem;
 }
+@media (hover: none) {
+  /* Your touch-specific styles go here */
+  .project-item:active .description {
+    opacity: 1;
+    color: #ffffff;
+    padding: 1em;
+    font-size: 1.24rem;
+  }
+}
 
 .project-item a {
   cursor: pointer;
@@ -694,9 +702,7 @@ footer p {
     padding: 1em;
   }
 }
-
 /* Landing page */
-
 #title {
   opacity: 0;
   transform: translateY(-50%) scale(0.5);
