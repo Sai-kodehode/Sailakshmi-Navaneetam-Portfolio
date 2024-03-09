@@ -113,3 +113,15 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   });
 });
+
+// Add an event listener for touchstart
+document.addEventListener("touchstart", function (event) {
+  // Your touch-related styles go here
+  var target = event.target;
+  if (target.classList.contains("project-item")) {
+    target.querySelector(".description").style.opacity = 1;
+    target.querySelector(".description").style.color = "#ffffff";
+    target.querySelector(".description").style.padding = "1em";
+    target.querySelector(".description").style.fontSize = "1.24rem";
+  }
+});
