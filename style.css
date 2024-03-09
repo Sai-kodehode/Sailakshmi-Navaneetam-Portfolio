@@ -164,29 +164,37 @@ main section {
   background: linear-gradient(rgb(7, 172, 242) 20%, rgba(236, 220, 220, 1) 50%);
   background-clip: text;
   color: transparent;
-  font-size: 2rem;
+  font-size: 1.5rem;
   padding: 0 0 0.8em 0;
-  letter-spacing: 0.05em;
+  letter-spacing: 0.02em;
 }
 #designation {
-  font-size: 1.5rem;
+  font-size: 0.6rem;
   letter-spacing: 0.2em;
   color: var(--color-blue);
 }
+@media (min-width: 300px) {
+  #name {
+    font-size: 2rem;
+  }
+  #designation {
+    font-size: 1.2rem;
+    letter-spacing: 0.3em;
+  }
+}
+
 @media (min-width: 768px) {
   #name {
     font-size: 2.2rem;
   }
   #designation {
-    letter-spacing: 0.3em;
+    font-size: 1.4rem;
+    letter-spacing: 0.4em;
   }
 }
 @media (min-width: 840px) {
   #name {
     font-size: 2.8rem;
-  }
-  #designation {
-    letter-spacing: 0.4em;
   }
 }
 
@@ -489,45 +497,41 @@ main section {
 
 /* contact */
 #contact {
+  text-align: center;
+  width: 100%;
   min-height: 90vh;
   max-height: auto;
-  width: 100%;
-  text-align: center;
   border: none;
 }
 #contact h1 {
-  padding: 1.125rem 0 0;
+  padding: 1rem 0 0;
   margin-bottom: 1.875rem;
 }
+
 #contact-details {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-around;
-  align-items: center;
   height: 100%;
-  margin: 0 1.25em;
+  gap: auto;
+  padding: 1em;
 }
 #contact-message {
   background: linear-gradient(to right, #1e2535, transparent, #1e2535);
   font-family: "Merriweather", serif;
   font-weight: 500;
   font-style: normal;
-  padding: 0.3125rem;
+  padding: 1.2rem;
   border-radius: 0.75em;
   font-size: 1.125rem;
   line-height: 1.9;
   color: #b8cdcddd;
 }
 #contact-message span {
-  font-family: "Merriweather", serif;
   color: rgb(0, 139, 0);
-  font-style: normal;
-  font-weight: 850;
-  font-size: 1.375rem;
+  font-weight: 800;
+  font-size: 1.5rem;
   font-family: var(--ff-secondary);
 }
 .social-icons {
-  margin-top: 0.625em;
+  margin-top: 10%;
   color: var(--color-blue);
 }
 .social-icons p {
@@ -556,6 +560,13 @@ main section {
 
 /* Media Query for contact */
 @media only screen and (min-width: 768px) {
+  #contact {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    height: 90vh;
+  }
   #contact h1 {
     padding: 1.875rem 0 0 0;
     margin-bottom: 0;
@@ -563,10 +574,10 @@ main section {
   #contact-details {
     display: flex;
     flex-direction: row;
-    justify-content: space-evenly;
+    justify-content: space-around;
     align-items: center;
     width: 90%;
-    margin: 5.5em 0;
+    height: 100%;
   }
   #contact-message {
     background: linear-gradient(
@@ -591,10 +602,7 @@ main section {
   }
   .social-icons {
     margin-top: 0px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    align-items: start;
+    text-align: start;
   }
   .social-icons p a {
     font-size: 1.375rem;
