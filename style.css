@@ -571,13 +571,14 @@ main section {
     padding: 1.875rem 0 0 0;
     margin-bottom: 0;
   }
+
   #contact-details {
     display: flex;
     flex-direction: row;
     justify-content: space-around;
     align-items: center;
     width: 90%;
-    height: 100%;
+    /* height: 80vh; */
   }
   #contact-message {
     background: linear-gradient(
@@ -588,22 +589,43 @@ main section {
       transparent,
       #25241e
     );
-    font-size: 1.5rem;
+    font-size: 1.25rem;
     border-radius: 1.25em;
     text-overflow: none;
     min-width: 250px;
     max-width: 25%;
+    padding: 0.5rem;
   }
-  #contact-message {
-    padding: 0.9375rem;
-  }
+
   #contact-message span {
-    font-size: 1.5rem;
+    font-size: 1.6rem;
   }
   .social-icons {
     margin-top: 0px;
     text-align: start;
+    margin-right: 40px;
   }
+  .social-icons p a {
+    font-size: 1.27rem;
+  }
+  .social-icons p {
+    font-size: 1.27rem;
+  }
+  .social-icons p i {
+    padding-right: 0.2em;
+    font-size: 1.28rem;
+  }
+}
+
+@media only screen and (min-width: 940px) {
+  #contact-message {
+    font-size: 1.5rem;
+    padding: 0.9375rem;
+  }
+  #contact-message span {
+    font-size: 1.8rem;
+  }
+
   .social-icons p a {
     font-size: 1.375rem;
   }
@@ -639,6 +661,14 @@ footer p {
   padding: 0.5em;
 }
 @media only screen and (min-width: 768px) {
+  footer {
+    font-size: 1.2rem;
+  }
+  footer p {
+    padding: 0.7em;
+  }
+}
+@media only screen and (min-width: 940px) {
   footer {
     font-size: 1.5rem;
   }
