@@ -100,6 +100,11 @@ nav li#projectsNavItem.active,
 nav li#contactNavItem.active {
   background-color: #43495b;
 }
+@media only screen and (min-width: 1720px) {
+  nav a {
+    font-size: 26px;
+  }
+}
 @media only screen and (min-width: 768px) {
   .close-menu,
   .hamburger-menu {
@@ -146,6 +151,7 @@ nav li#contactNavItem.active {
 
 /* main section */
 main section {
+  user-select: none;
   width: 100%;
   height: 100vh;
 }
@@ -178,7 +184,7 @@ main section {
     font-size: 2rem;
   }
   #designation {
-    font-size: 1.2rem;
+    font-size: 1rem;
     letter-spacing: 0.3em;
   }
 }
@@ -188,7 +194,7 @@ main section {
     font-size: 2.2rem;
   }
   #designation {
-    font-size: 1.4rem;
+    font-size: 1.1rem;
     letter-spacing: 0.4em;
   }
 }
@@ -196,19 +202,34 @@ main section {
   #name {
     font-size: 2.8rem;
   }
+  #designation {
+    font-size: 1.3rem;
+  }
 }
 
-@media (min-width: 1200px) {
+@media (min-width: 1100px) {
   #name {
     font-size: 3.5rem;
   }
   #designation {
+    font-size: 1.5rem;
     letter-spacing: 0.5em;
+  }
+}
+
+@media (min-width: 1720px) {
+  #name {
+    font-size: 4.5rem;
+  }
+  #designation {
+    font-size: 1.7rem;
+    letter-spacing: 0.55em;
   }
 }
 
 /* About Me */
 #aboutme {
+  user-select: none;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -285,14 +306,14 @@ main section {
   padding: 0.5em 0.75em;
   font-size: 1.25em;
   cursor: pointer;
-  border-left: 0.25em solid var(--color-light-orange);
-  border-bottom: 0.25em solid var(--color-light-orange);
+  border-left: 0.25em solid #c7b82c;
+  border-bottom: 0.25em solid #c7b82c;
   border-radius: 20px;
-  margin: 3.75em 0;
+  margin: 1.75em;
 }
 #resume:hover {
-  border-bottom: 0.25em solid var(--color-yellow);
-  border-left: 0.25em solid var(--color-yellow);
+  border-bottom: 0.25em solid #1bdb8b;
+  border-left: 0.25em solid #1bdb8b;
 }
 #resume:focus {
   outline: auto;
@@ -310,7 +331,7 @@ main section {
   );
   background-clip: text;
   color: transparent;
-  font-size: 1.5625em;
+  font-size: 1.6625em;
   margin: 0.625em;
   padding: 1.25em 0;
   cursor: pointer;
@@ -334,7 +355,7 @@ main section {
       "cv cv";
     align-items: center;
     text-align: center;
-    row-gap: 10px;
+    row-gap: 15px;
     column-gap: 20px;
     height: auto;
     margin: 1.25em 12.5em 0 3.125em;
@@ -346,7 +367,7 @@ main section {
   }
   #pitch {
     grid-area: pitch;
-    font-size: 1.3em;
+    font-size: 1.4em;
     max-width: 90%;
     min-width: 350px;
     margin: 0 auto;
@@ -376,40 +397,54 @@ main section {
     grid-area: cv;
     justify-self: self-end;
     align-self: flex-start;
-    margin: 0 12.5em 3.75em 0;
   }
 }
 /* need to check */
-/* @media only screen and (min-width: 1700px) {
+@media only screen and (min-width: 1720px) {
   #aboutme {
-    padding: 1.25em 0 0 0;
+    padding: 2em 0 0 0;
   }
+
   #aboutme h1 {
-    margin-bottom: 20px;
+    margin-bottom: 30px;
   }
-  #aboutme-div {
-    row-gap: 20px;
-    column-gap: 40px;
-    margin: 1.25em 12.5em 0 3.125em;
+
+  .about-heading,
+  .me-heading {
+    font-size: 3.5rem;
   }
   #aboutme-div .image {
-    grid-area: pic;
-    align-self: center;
-    margin: 0 auto;
+    width: 360px;
+    height: 360px;
   }
+  #aboutme-div {
+    margin: 1.25em 12.5em 0 3.125em;
+  }
+
   #pitch {
-    font-size: 1.6em;
+    font-size: 1.7em;
   }
 
   #pitch p {
     line-height: 2;
     text-indent: 120px;
   }
-} */
+
+  skills-heading {
+    font-size: 2em;
+  }
+  #skill-set {
+    font-size: 1.4em;
+  }
+  #resume {
+    margin: 0 12.5em 3.75em 0;
+  }
+}
 
 /* my projects */
 #myprojects {
   user-select: none;
+  min-height: 100vh;
   height: auto;
   width: 100%;
   padding-bottom: 5rem;
@@ -484,7 +519,6 @@ main section {
   color: rgb(51, 255, 0);
 }
 .description p {
-  /* display: block; */
   margin: 0.125em 0;
   line-height: 2.5;
 }
@@ -492,6 +526,20 @@ main section {
   .project-container {
     max-width: 80%;
     margin-left: 4rem;
+  }
+}
+
+@media only screen and (min-width: 1720px) {
+  .project-container {
+    row-gap: 5em;
+    margin: 0 auto;
+  }
+  .project-item {
+    height: 420px;
+    width: 420px;
+  }
+  .project-item:hover .description {
+    font-size: 1.4rem;
   }
 }
 
@@ -504,6 +552,7 @@ main section {
   border: none;
 }
 #contact h1 {
+  user-select: none;
   padding: 1rem 0 0;
   margin-bottom: 1.875rem;
 }
@@ -514,6 +563,7 @@ main section {
   padding: 1em;
 }
 #contact-message {
+  user-select: none;
   background: linear-gradient(to right, #1e2535, transparent, #1e2535);
   font-family: "Merriweather", serif;
   font-weight: 500;
@@ -536,11 +586,11 @@ main section {
 }
 .social-icons p {
   padding: 1.25rem 0 0.625em;
-  font-size: 1.5625rem;
+  font-size: 1.4rem;
 }
 .social-icons p a {
   color: #b8cdcddd;
-  font-size: 1.25rem;
+  font-size: 1.1rem;
   font-family: var(--ff-tertiary);
   font-style: normal;
   text-decoration: none;
@@ -578,7 +628,6 @@ main section {
     justify-content: space-around;
     align-items: center;
     width: 90%;
-    /* height: 80vh; */
   }
   #contact-message {
     background: linear-gradient(
@@ -594,26 +643,30 @@ main section {
     text-overflow: none;
     min-width: 250px;
     max-width: 25%;
-    padding: 0.5rem;
+    padding: 0.25rem;
   }
 
   #contact-message span {
-    font-size: 1.6rem;
+    font-size: 1.5rem;
   }
   .social-icons {
     margin-top: 0px;
     text-align: start;
     margin-right: 50px;
   }
-  .social-icons p a {
-    font-size: 1.27rem;
-  }
   .social-icons p {
-    font-size: 1.27rem;
+    padding: 1rem;
+  }
+  .social-icons p a {
+    font-size: 1.2rem;
+  }
+
+  .social-icons p {
+    font-size: 1.2rem;
   }
   .social-icons p i {
     padding-right: 0.2em;
-    font-size: 1.28rem;
+    font-size: 1.2rem;
   }
 }
 
@@ -638,8 +691,26 @@ main section {
   }
 }
 
+@media only screen and (min-width: 1720px) {
+  #contact-message {
+    font-size: 2.2rem;
+    padding: 1rem;
+  }
+  #contact-message span {
+    font-size: 2.6rem;
+  }
+
+  .social-icons p a {
+    font-size: 2rem;
+  }
+  .social-icons p i {
+    font-size: 2.2rem;
+  }
+}
+
 /* Footer */
 footer {
+  user-select: none;
   display: flex;
   background: linear-gradient(to right, transparent, #373b45, transparent);
   background-color: transparent;
@@ -676,8 +747,14 @@ footer p {
     padding: 1em;
   }
 }
+@media only screen and (min-width: 1720px) {
+  footer {
+    font-size: 2rem;
+  }
+}
+
 /* Landing page */
-#title {
+/* #title {
   opacity: 0;
   transform: translateY(-50%) scale(0.5);
   animation: revealText 1.2s ease-in-out forwards;
@@ -691,7 +768,7 @@ footer p {
     opacity: 1;
     transform: translateY(0) scale(1);
   }
-}
+} */
 .section-class {
   border-bottom: 1px solid #55ccff;
 }
