@@ -106,7 +106,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
   window.addEventListener("resize", function () {
     if (window.innerWidth < 768 && !isHamburgerIconSet) {
-      // Set hamburger icon as default when window width is less than 768px
+      // Setting hamburger icon as default when window width is less than 768px
       closeNavigation();
     } else if (window.innerWidth >= 768) {
       isHamburgerIconSet = false;
