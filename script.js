@@ -114,13 +114,18 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 });
 
-document.addEventListener("touchend", function (event) {
-  // Your touch-related styles go here
-  var target = event.target;
-  if (target.classList.contains("project-item")) {
-    target.querySelector(".description").style.opacity = 1;
-    target.querySelector(".description").style.color = "#ffffff";
-    target.querySelector(".description").style.padding = "1em";
-    target.querySelector(".description").style.fontSize = "1.24rem";
-  }
+document.addEventListener("DOMContentLoaded", function () {
+  // Wait for the DOM to be fully loaded
+
+  // Add touchstart event listener to the document
+  document.addEventListener("touchstart", function (event) {
+    // Check if the touched element is a project item
+    var target = event.target.closest(".project-item");
+
+    // If the touched element is a project item, toggle the description visibility
+    if (target) {
+      var description = target.querySelector(".description");
+      description.style.opacity = description.style.opacity === "1" ? "0" : "1";
+    }
+  });
 });
