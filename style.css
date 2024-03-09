@@ -17,11 +17,7 @@ body {
   --color-blue: #55ccff;
   --color-yellow: #d3c11a;
   --color-light-orange: #ecdcdc;
-  /* need to remove */
-  /* --color-white: white; */
   --bkclr--black: #2c3140;
-  /* need to remove */
-  /* --bkclr--thick-black: #1e242c; */
 
   --ff-primary: "PT Serif", serif;
   --ff-secondary: "Song Myung", serif;
@@ -56,14 +52,12 @@ body {
   transition: filter 0.0001s ease;
   z-index: -1;
 }
-
 header {
   position: fixed;
   top: 0;
   right: 0;
   z-index: 100;
 }
-
 nav {
   user-select: none;
   background-color: var(--bkclr--black);
@@ -73,11 +67,9 @@ nav {
   top: 0px;
   position: fixed;
 }
-
 nav ul {
   text-align: center;
 }
-
 nav li {
   list-style-type: none;
   display: flex;
@@ -86,7 +78,6 @@ nav li {
   margin: 60px 0;
   cursor: pointer;
 }
-
 nav a {
   color: #c7b82c;
   font-weight: 480;
@@ -100,45 +91,37 @@ nav a:hover {
   color: #1bdb8b;
   text-decoration: underline;
 }
-
 nav li:hover {
   background-color: #1f1f20;
 }
-
 nav li#homeNavItem.active,
 nav li#aboutMeNavItem.active,
 nav li#projectsNavItem.active,
 nav li#contactNavItem.active {
   background-color: #43495b;
 }
-
 @media only screen and (min-width: 768px) {
   .close-menu,
   .hamburger-menu {
     display: none;
   }
-
   header {
     top: 50%;
     transform: translateY(-50%);
   }
-
   nav {
     height: 50%;
     text-align: center;
     position: relative;
     border-left: 2px solid var(--color-light-orange);
   }
-
   nav li {
     margin: 30px 0px;
   }
-
   nav a {
     padding: 10px 20px;
   }
 }
-
 @media (max-width: 768px) {
   nav,
   header,
@@ -150,22 +133,18 @@ nav li#contactNavItem.active {
   .hamburger-menu {
     display: block;
   }
-
   nav.active .hamburger-menu {
     display: none;
   }
-
   nav.active .close-menu {
     display: block;
   }
-
   header.active {
     display: block;
   }
 }
 
 /* main section */
-
 main section {
   width: 100%;
   height: 100vh;
@@ -189,13 +168,11 @@ main section {
   padding: 0 0 0.8em 0;
   letter-spacing: 0.05em;
 }
-
 #designation {
   font-size: 1.5rem;
   letter-spacing: 0.2em;
   color: var(--color-blue);
 }
-
 @media (min-width: 768px) {
   #name {
     font-size: 2.2rem;
@@ -212,6 +189,16 @@ main section {
     letter-spacing: 0.4em;
   }
 }
+
+@media (min-width: 1200px) {
+  #name {
+    font-size: 3.5rem;
+  }
+  #designation {
+    letter-spacing: 0.5em;
+  }
+}
+
 /* About Me */
 #aboutme {
   display: flex;
@@ -223,7 +210,6 @@ main section {
   align-items: center;
   padding: 1.875em;
 }
-
 #aboutme h1 {
   margin-bottom: 1.275em;
 }
@@ -239,15 +225,12 @@ main section {
 .me-heading {
   color: var(--color-blue);
 }
-
 .main-color {
   color: var(--color-blue);
 }
-
 .highlight-color {
   color: var(--color-light-orange);
 }
-
 #aboutme-div .image {
   width: 260px;
   height: 260px;
@@ -255,7 +238,6 @@ main section {
   border: 8px solid var(--color-light-orange);
   object-fit: cover;
 }
-
 #pitch {
   font-size: 1.25em;
   font-family: var(--ff-tertiary);
@@ -280,7 +262,6 @@ main section {
   border-radius: 10px;
   margin: 0 auto;
 }
-
 #skill-set {
   margin-top: 1.875em;
   padding: 1.875em;
@@ -290,7 +271,6 @@ main section {
   border-radius: 16px;
   letter-spacing: 1.2px;
 }
-
 #resume {
   background-color: var(--bkclr--black);
   border: none;
@@ -302,7 +282,6 @@ main section {
   border-radius: 20px;
   margin: 3.75em 0;
 }
-
 #resume:hover {
   border-bottom: 0.25em solid var(--color-yellow);
   border-left: 0.25em solid var(--color-yellow);
@@ -310,11 +289,9 @@ main section {
 #resume:focus {
   outline: auto;
 }
-
 .fa-download {
   padding-left: 0.3125em;
 }
-
 #resume a {
   background: linear-gradient(
     to bottom,
@@ -331,7 +308,6 @@ main section {
   cursor: pointer;
   font-family: "Bitter", serif;
 }
-
 @media only screen and (min-width: 768px) {
   #aboutme {
     padding: 1.25em 0 0 0;
@@ -368,7 +344,6 @@ main section {
     margin: 0 auto;
     align-self: flex-start;
   }
-
   #pitch p {
     line-height: 2;
     margin-bottom: 20px;
@@ -389,7 +364,6 @@ main section {
     border-radius: 10px;
     margin: 0 auto;
   }
-
   #resume {
     grid-area: cv;
     justify-self: self-end;
@@ -401,7 +375,6 @@ main section {
 /* @media only screen and (min-width: 1700px) {
   #aboutme {
     padding: 1.25em 0 0 0;
-    min-height: 100vh;
   }
   #aboutme h1 {
     margin-bottom: 20px;
@@ -428,17 +401,16 @@ main section {
 
 /* my projects */
 #myprojects {
+  user-select: none;
   height: auto;
   width: 100%;
   padding-bottom: 5rem;
 }
-
 #myprojects h1 {
   padding: 2rem 0;
   width: fit-content;
   margin: 0 auto;
 }
-
 .project-container {
   max-width: 100%;
   line-height: 0;
@@ -449,7 +421,6 @@ main section {
   justify-content: center;
   gap: 2em;
 }
-
 .project-item {
   /* flex: 1 340px; */
   height: 360px;
@@ -481,7 +452,6 @@ main section {
   font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
     "Lucida Sans", Arial, sans-serif;
 }
-
 .description {
   position: absolute;
   top: 0;
@@ -494,17 +464,12 @@ main section {
   font-size: 1.25rem;
   transition: opacity 0.6s ease-out;
 }
-
-/* .project-container a {
-  text-decoration: none;
-} */
 .project-item:hover .description {
   opacity: 1;
   color: #ffffff;
   padding: 1em;
   font-size: 1.24rem;
 }
-
 .project-item a {
   cursor: pointer;
   text-decoration: underline;
@@ -515,7 +480,6 @@ main section {
   margin: 0.125em 0;
   line-height: 2.5;
 }
-
 @media only screen and (min-width: 768px) {
   .project-container {
     max-width: 80%;
@@ -531,12 +495,10 @@ main section {
   text-align: center;
   border: none;
 }
-
 #contact h1 {
   padding: 1.125rem 0 0;
   margin-bottom: 1.875rem;
 }
-
 #contact-details {
   display: flex;
   flex-direction: column;
@@ -545,7 +507,6 @@ main section {
   height: 100%;
   margin: 0 1.25em;
 }
-
 #contact-message {
   background: linear-gradient(to right, #1e2535, transparent, #1e2535);
   font-family: "Merriweather", serif;
@@ -557,7 +518,6 @@ main section {
   line-height: 1.9;
   color: #b8cdcddd;
 }
-
 #contact-message span {
   font-family: "Merriweather", serif;
   color: rgb(0, 139, 0);
@@ -566,12 +526,10 @@ main section {
   font-size: 1.375rem;
   font-family: var(--ff-secondary);
 }
-
 .social-icons {
   margin-top: 0.625em;
   color: var(--color-blue);
 }
-
 .social-icons p {
   padding: 1.25rem 0 0.625em;
   font-size: 1.5625rem;
@@ -584,17 +542,14 @@ main section {
   text-decoration: none;
   padding-left: 0.625em;
 }
-
 .social-icons p a:hover {
   color: rgb(14, 196, 14);
   text-decoration: underline;
 }
-
 .social-icons p i {
   color: rgb(32, 175, 201);
   font-size: 1.125rem;
 }
-
 .social-icons p i:hover + a {
   color: #7845a7;
 }
@@ -613,7 +568,6 @@ main section {
     width: 90%;
     margin: 5.5em 0;
   }
-
   #contact-message {
     background: linear-gradient(
       to right,
@@ -629,14 +583,12 @@ main section {
     min-width: 250px;
     max-width: 25%;
   }
-
   #contact-message {
     padding: 0.9375rem;
   }
   #contact-message span {
     font-size: 1.5rem;
   }
-
   .social-icons {
     margin-top: 0px;
     display: flex;
@@ -644,11 +596,9 @@ main section {
     justify-content: space-around;
     align-items: start;
   }
-
   .social-icons p a {
     font-size: 1.375rem;
   }
-
   .social-icons p {
     font-size: 1.25rem;
   }
@@ -671,23 +621,19 @@ footer {
   font-size: 1rem;
   font-family: var(--ff-primary);
 }
-
 footer p {
   background: linear-gradient(to right, #55ccff, #d3c11a);
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
 }
-
 footer p {
   padding: 0.5em;
 }
-
 @media only screen and (min-width: 768px) {
   footer {
     font-size: 1.5rem;
   }
-
   footer p {
     padding: 1em;
   }
@@ -708,7 +654,6 @@ footer p {
     transform: translateY(0) scale(1);
   }
 }
-
 .section-class {
   border-bottom: 1px solid #55ccff;
 }

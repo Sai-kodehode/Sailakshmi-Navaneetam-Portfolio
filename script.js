@@ -102,27 +102,23 @@ document.addEventListener("DOMContentLoaded", function () {
       }
     });
   });
+
   let isHamburgerIconSet = false;
 
   window.addEventListener("resize", function () {
-    if (window.innerWidth < 768 && !isHamburgerIconSet) {
-      // Setting hamburger icon as default when window width is less than 768px
+    if (window.innerWidth >= 786) {
       closeNavigation();
-    } else if (window.innerWidth >= 768) {
+    } else {
       isHamburgerIconSet = false;
     }
   });
 });
 
 document.addEventListener("DOMContentLoaded", function () {
-  // Wait for the DOM to be fully loaded
-
-  // Add touchstart event listener to the document
+  //  touchstart event listener
   document.addEventListener("touchstart", function (event) {
-    // Check if the touched element is a project item
     var target = event.target.closest(".project-item");
-
-    // If the touched element is a project item, toggle the description visibility
+    // toggle the description visibility
     if (target) {
       var description = target.querySelector(".description");
       description.style.opacity = description.style.opacity === "1" ? "0" : "1";
