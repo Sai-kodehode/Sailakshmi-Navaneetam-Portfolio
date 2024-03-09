@@ -41,7 +41,6 @@ body {
 }
 .close-menu {
   z-index: 102;
-  color: #db451b;
 }
 
 .background {
@@ -186,7 +185,7 @@ main section {
   background: linear-gradient(rgb(7, 172, 242) 20%, rgba(236, 220, 220, 1) 50%);
   background-clip: text;
   color: transparent;
-  font-size: 2.4rem;
+  font-size: 2rem;
   padding: 0 0 0.8em 0;
   letter-spacing: 0.05em;
 }
@@ -198,21 +197,18 @@ main section {
 }
 
 @media (min-width: 768px) {
-  #title {
-    margin: 0;
-  }
   #name {
-    font-size: 3rem;
-  }
-  main section {
-    width: 100%;
-    height: 100vh;
+    font-size: 2.2rem;
   }
   #designation {
     letter-spacing: 0.4em;
   }
 }
-
+@media (min-width: 840px) {
+  #name {
+    font-size: 2.8rem;
+  }
+}
 /* About Me */
 #aboutme {
   display: flex;
