@@ -201,12 +201,15 @@ main section {
     font-size: 2.2rem;
   }
   #designation {
-    letter-spacing: 0.4em;
+    letter-spacing: 0.3em;
   }
 }
 @media (min-width: 840px) {
   #name {
     font-size: 2.8rem;
+  }
+  #designation {
+    letter-spacing: 0.4em;
   }
 }
 /* About Me */
