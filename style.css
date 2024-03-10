@@ -570,14 +570,14 @@ main section {
 }
 #contact h1 {
   user-select: none;
-  padding: 1rem 0 0;
-  margin-bottom: 1.875rem;
+  padding: 1rem 0 0 0;
 }
 
 #contact-details {
   height: 100%;
   gap: auto;
   padding: 1em;
+  margin-top: var(--contact-details-margin-top);
 }
 #contact-message {
   user-select: none;
@@ -632,7 +632,6 @@ main section {
     flex-direction: column;
     justify-content: flex-start;
     align-items: center;
-    height: 90vh;
   }
   #contact h1 {
     padding: 1.875rem 0 0 0;
@@ -645,6 +644,7 @@ main section {
     justify-content: space-around;
     align-items: center;
     width: 90%;
+    margin-top: var(--contact-details-margin-top); /* Centering calculation */
   }
   #contact-message {
     background: linear-gradient(
@@ -728,7 +728,6 @@ main section {
 .section-class {
   border-bottom: 1px solid #55ccff;
 }
-
 /* Footer */
 footer {
   user-select: none;
@@ -776,7 +775,7 @@ footer p {
   }
 }
 
-/* Landing page animation*/
+/* Landing page */
 #title {
   opacity: 0;
   transform: translateY(-50%) scale(0.5);

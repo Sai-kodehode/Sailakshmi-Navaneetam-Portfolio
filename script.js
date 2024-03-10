@@ -114,6 +114,26 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 });
 
+// To place elements vertically center always for #contact section
+const contactElement = document.getElementById("contact");
+const contactDetailsElement = document.getElementById("contact-details");
+
+function updateContactDetailsMarginTop() {
+  const marginTop =
+    (contactElement.clientHeight - contactDetailsElement.clientHeight) / 2;
+  document.documentElement.style.setProperty(
+    "--contact-details-margin-top",
+    marginTop + "px"
+  );
+}
+
+// calling the function initially
+updateContactDetailsMarginTop();
+
+// Adding event listener for window resize
+window.addEventListener("resize", updateContactDetailsMarginTop);
+
+// For mobile touch
 document.addEventListener("DOMContentLoaded", function () {
   //  touchstart event listener
   document.addEventListener("touchstart", function (event) {
