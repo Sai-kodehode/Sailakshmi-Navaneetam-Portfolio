@@ -1,3 +1,4 @@
+/* Default styling */
 *,
 *::before,
 *::after {
@@ -23,9 +24,10 @@ body {
   --ff-secondary: "Song Myung", serif;
   --ff-tertiary: "Tiro Telugu", serif;
 }
-
+/* hamburger, close menu's */
 .hamburger-menu,
 .close-menu {
+  user-select: none;
   position: fixed;
   top: 0px;
   right: 0px;
@@ -38,7 +40,7 @@ body {
 .close-menu {
   z-index: 102;
 }
-
+/* background image */
 .background {
   position: fixed;
   top: 0;
@@ -50,6 +52,7 @@ body {
   transition: filter 0.0001s ease;
   z-index: -1;
 }
+/* header */
 header {
   position: fixed;
   width: 100%;
@@ -98,7 +101,7 @@ nav a:hover {
 nav li:hover {
   background-color: #1f1f20;
 }
-
+/* header under 768px width */
 @media (max-width: 768px) {
   nav,
   header,
@@ -120,7 +123,7 @@ nav li:hover {
     display: block;
   }
 }
-
+/* header above 768px width */
 @media only screen and (min-width: 768px) {
   header {
     position: fixed;
@@ -138,7 +141,6 @@ nav li:hover {
     height: fit-content;
     user-select: none;
     position: relative;
-
     border-left: 2px solid var(--color-light-orange);
   }
   nav ul {
@@ -195,6 +197,8 @@ main section {
   letter-spacing: 0.2em;
   color: var(--color-blue);
 }
+
+/* media query fortitle */
 @media (min-width: 300px) {
   #name {
     font-size: 2rem;
@@ -353,6 +357,7 @@ main section {
   cursor: pointer;
   font-family: "Bitter", serif;
 }
+/* media query for about me section */
 @media only screen and (min-width: 768px) {
   #aboutme {
     padding: 1.25em 0 0 0;
@@ -415,7 +420,6 @@ main section {
     align-self: flex-start;
   }
 }
-/* need to check */
 @media only screen and (min-width: 1720px) {
   #aboutme {
     padding: 2em 0 0 0;
@@ -470,25 +474,22 @@ main section {
   width: fit-content;
   margin: 0 auto;
 }
+/* project container */
 .project-container {
   max-width: 100%;
   line-height: 0;
-  /* margin: 2rem 5rem; */
   margin: 0 auto;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   gap: 2em;
 }
+/* individual projects */
 .project-item {
-  /* flex: 1 340px; */
   height: 360px;
   width: 360px;
-  /* need to check */
   max-width: 100%;
   position: relative;
-  /* overflow: hidden; */
-  /* display: inline-block; */
   background: linear-gradient(180deg, #39d2d7 20%, #c4bd6b 90%);
   border-radius: 12px;
 }
@@ -496,7 +497,6 @@ main section {
 .project-item img {
   height: 90%;
   width: 100%;
-  /* display: block; */
   border: 6px solid transparent;
   border-radius: 10px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
@@ -538,6 +538,7 @@ main section {
   margin: 0.125em 0;
   line-height: 2.5;
 }
+/* media query for project container */
 @media only screen and (min-width: 768px) {
   .project-container {
     max-width: 80%;
@@ -624,7 +625,7 @@ main section {
   color: #7845a7;
 }
 
-/* Media Query for contact */
+/* media Query for contact */
 @media only screen and (min-width: 768px) {
   #contact {
     display: flex;
@@ -724,6 +725,10 @@ main section {
   }
 }
 
+.section-class {
+  border-bottom: 1px solid #55ccff;
+}
+
 /* Footer */
 footer {
   user-select: none;
@@ -747,6 +752,8 @@ footer p {
 footer p {
   padding: 0.5em;
 }
+
+/* media query for footer */
 @media only screen and (min-width: 768px) {
   footer {
     font-size: 1.2rem;
@@ -769,8 +776,8 @@ footer p {
   }
 }
 
-/* Landing page */
-/* #title {
+/* Landing page animation*/
+#title {
   opacity: 0;
   transform: translateY(-50%) scale(0.5);
   animation: revealText 1.2s ease-in-out forwards;
@@ -784,7 +791,4 @@ footer p {
     opacity: 1;
     transform: translateY(0) scale(1);
   }
-} */
-.section-class {
-  border-bottom: 1px solid #55ccff;
 }
