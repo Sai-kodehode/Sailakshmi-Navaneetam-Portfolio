@@ -81,7 +81,7 @@ nav a {
   justify-content: center;
   height: 100%;
   color: #c7b82c;
-  font-weight: 480;
+  font-weight: 500;
   font-size: 20px;
   cursor: pointer;
   font-family: "Bitter", serif;
@@ -644,7 +644,7 @@ main section {
     justify-content: space-around;
     align-items: center;
     width: 90%;
-    margin-top: var(--contact-details-margin-top); /* Centering calculation */
+    margin-top: var(--contact-details-margin-top);
   }
   #contact-message {
     background: linear-gradient(
