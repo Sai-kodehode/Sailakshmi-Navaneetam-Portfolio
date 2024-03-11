@@ -521,22 +521,25 @@ main section {
   padding: 1em;
   opacity: 0;
   font-size: 1.25rem;
-  transition: opacity 0.6s ease-out;
+  transition: opacity 0.6s ease-in;
 }
 .project-item:hover .description {
   opacity: 1;
   color: #ffffff;
   padding: 1em;
-  font-size: 1.24rem;
+  font-size: 1.25rem;
 }
-.project-item a {
-  cursor: pointer;
-  text-decoration: underline;
+.github-link {
+  display: block;
+  color: rgb(255, 196, 0);
+}
+.live-link {
   color: rgb(51, 255, 0);
 }
+
 .description p {
   margin: 0.125em 0;
-  line-height: 2.5;
+  line-height: 2;
 }
 /* media query for project container */
 @media only screen and (min-width: 768px) {
@@ -555,6 +558,11 @@ main section {
     height: 420px;
     width: 420px;
   }
+
+  .description {
+    font-size: 1.4rem;
+  }
+
   .project-item:hover .description {
     font-size: 1.4rem;
   }
