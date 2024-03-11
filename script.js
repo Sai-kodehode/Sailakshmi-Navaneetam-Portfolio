@@ -117,10 +117,13 @@ document.addEventListener("DOMContentLoaded", function () {
 // To place elements vertically center always for #contact section
 const contactElement = document.getElementById("contact");
 const contactDetailsElement = document.getElementById("contact-details");
-
+const h1Element = document.querySelector("#contact h1");
 function updateContactDetailsMarginTop() {
   const marginTop =
-    (contactElement.clientHeight - contactDetailsElement.clientHeight) / 2;
+    (contactElement.clientHeight -
+      contactDetailsElement.clientHeight -
+      h1Element.clientHeight) /
+    2;
   document.documentElement.style.setProperty(
     "--contact-details-margin-top",
     marginTop + "px"
