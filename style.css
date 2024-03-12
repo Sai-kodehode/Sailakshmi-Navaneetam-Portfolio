@@ -169,13 +169,15 @@ nav li:hover {
 
 #language-toggle {
   position: fixed;
-  top: 10px;
-  left: 50%;
-  transform: translateX(-50%);
+  top: 0;
+  right: 0;
+  transform: translateX(-10%);
   display: flex;
   justify-content: center;
   align-items: center;
   z-index: 1000;
+  margin: 0.5rem;
+  padding: 0;
 }
 
 #language-toggle .flag-container {

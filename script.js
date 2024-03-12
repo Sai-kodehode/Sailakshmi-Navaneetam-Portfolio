@@ -138,8 +138,6 @@ window.addEventListener("resize", updateContactDetailsMarginTop);
 
 // For mobile touch
 document.addEventListener("DOMContentLoaded", function () {
-  window.location.href = "index2.html";
-
   //  touchstart event listener
   document.addEventListener("touchstart", function (event) {
     var target = event.target.closest(".project-item");
