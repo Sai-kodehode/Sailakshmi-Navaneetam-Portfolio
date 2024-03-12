@@ -167,12 +167,34 @@ nav li:hover {
   }
 }
 
-/* main section */
-.language {
-  padding: 0.5em 0 0 0;
-  font-size: 2rem;
-  z-index: 200000;
-  color: white;
+#language-toggle {
+  position: fixed;
+  top: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+#language-toggle .flag-container {
+  display: flex;
+  align-items: center;
+}
+
+#language-toggle img {
+  width: 20px; /* Adjust the width as needed */
+  height: auto; /* Maintain aspect ratio */
+  margin-right: 5px; /* Add some spacing between the flag and text */
+}
+
+#language-toggle button {
+  background-color: #fff;
+  color: #000;
+  border: 1px solid #000;
+  padding: 5px 10px;
+  margin: 0 5px;
 }
 
 main section {
@@ -256,7 +278,7 @@ main section {
 
 /* About Me */
 #aboutme {
-  user-select: none;
+  /* user-select: none; */
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -536,10 +558,12 @@ main section {
   font-size: 1.25rem;
 }
 .github-link {
+  /* text-decoration: none; */
   display: block;
   color: rgb(255, 196, 0);
 }
 .live-link {
+  /* text-decoration: none; */
   color: rgb(51, 255, 0);
 }
 

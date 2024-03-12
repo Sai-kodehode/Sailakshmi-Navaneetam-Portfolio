@@ -148,3 +148,8 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   });
 });
+
+// Changing Languages
+function changeLanguage(targetPage) {
+  window.location.href = targetPage;
+}
