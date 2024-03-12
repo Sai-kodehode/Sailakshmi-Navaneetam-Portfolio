@@ -168,6 +168,13 @@ nav li:hover {
 }
 
 /* main section */
+.language {
+  padding: 0.5em 0 0 0;
+  font-size: 2rem;
+  z-index: 200000;
+  color: white;
+}
+
 main section {
   user-select: none;
   width: 100%;
@@ -265,7 +272,6 @@ main section {
 .about-heading,
 .me-heading {
   color: var(--color-light-orange);
-  text-decoration: underline;
   font-family: var(--ff-primary);
   font-style: normal;
   font-size: 40px;
@@ -326,8 +332,8 @@ main section {
   padding: 0.5em 0.75em;
   font-size: 1.25em;
   cursor: pointer;
-  border-left: 0.25em solid #c7b82c;
-  border-bottom: 0.25em solid #c7b82c;
+  border-left: 0.25em solid var(--color-light-orange);
+  border-bottom: 0.25em solid var(--color-light-orange);
   border-radius: 20px;
   margin: 1.75em;
 }
@@ -344,10 +350,10 @@ main section {
 #resume a {
   background: linear-gradient(
     to bottom,
-    var(--color-blue) 0%,
-    var(--color-blue) 45%,
-    var(--color-yellow) 70%,
-    var(--color-yellow) 100%
+    var(--color-light-orange) 0%,
+    var(--color-light-orange) 45%,
+    #25ba17 60%,
+    #25ba17 100%
   );
   background-clip: text;
   color: transparent;
@@ -416,8 +422,8 @@ main section {
   }
   #resume {
     grid-area: cv;
-    justify-self: self-end;
-    align-self: flex-start;
+    justify-self: center;
+    align-self: flex-end;
   }
 }
 @media only screen and (min-width: 1720px) {
