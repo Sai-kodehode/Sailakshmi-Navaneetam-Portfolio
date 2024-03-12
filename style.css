@@ -181,8 +181,11 @@ nav li:hover {
 }
 
 #language-toggle .flag-container {
+  /* cursor: pointer; */
   display: flex;
   align-items: center;
+  font-family: var(--ff-primary);
+  font-weight: 600;
 }
 
 #language-toggle img {
@@ -195,7 +198,8 @@ nav li:hover {
   background-color: #fff;
   color: #000;
   border: 1px solid #000;
-  padding: 5px 10px;
+  padding: 2px 5px;
+  cursor: pointer;
   margin: 0 5px;
 }
 
