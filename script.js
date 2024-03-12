@@ -149,6 +149,8 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 });
 
+window.location.href = "index2.html";
+
 // Changing Languages
 function changeLanguage(targetPage) {
   window.location.href = targetPage;
