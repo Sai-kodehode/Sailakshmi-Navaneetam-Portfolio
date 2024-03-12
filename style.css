@@ -354,14 +354,12 @@ main section {
   padding: 0.5em 0.75em;
   font-size: 1.25em;
   cursor: pointer;
-  border-left: 0.25em solid var(--color-light-orange);
-  border-bottom: 0.25em solid var(--color-light-orange);
-  border-radius: 20px;
+  border: 0.1em solid var(--color-light-orange);
+  border-radius: 10px;
   margin: 1.75em;
 }
 #resume:hover {
-  border-bottom: 0.25em solid #1bdb8b;
-  border-left: 0.25em solid #1bdb8b;
+  border: 0.1em solid #25ba17;
 }
 #resume:focus {
   outline: auto;
