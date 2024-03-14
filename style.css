@@ -181,7 +181,6 @@ nav li:hover {
 }
 
 #language-toggle .flag-container {
-  /* cursor: pointer; */
   display: flex;
   align-items: center;
   font-family: var(--ff-primary);
@@ -189,9 +188,9 @@ nav li:hover {
 }
 
 #language-toggle img {
-  width: 20px; /* Adjust the width as needed */
-  height: auto; /* Maintain aspect ratio */
-  margin-right: 5px; /* Add some spacing between the flag and text */
+  width: 20px;
+  height: auto;
+  margin-right: 5px;
 }
 
 #language-toggle button {
@@ -284,7 +283,7 @@ main section {
 
 /* About Me */
 #aboutme {
-  /* user-select: none; */
+  user-select: none;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -555,6 +554,7 @@ main section {
   font-size: 1.25rem;
   transition: opacity 0.6s ease-in;
 }
+
 .project-item:hover .description {
   opacity: 1;
   color: #ffffff;
@@ -562,12 +562,10 @@ main section {
   font-size: 1.25rem;
 }
 .github-link {
-  /* text-decoration: none; */
   display: block;
   color: rgb(255, 196, 0);
 }
 .live-link {
-  /* text-decoration: none; */
   color: rgb(51, 255, 0);
 }
 
